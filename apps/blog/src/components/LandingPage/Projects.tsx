@@ -4,7 +4,7 @@ const projects = [
   {
     name: 'CHI App',
     description:
-      'An event ticketing platform where users can purchase tickets, food, and drinks at events. Also includes crew management features for event organizers.',
+      'A mobile event ticketing platform where users can discover events, purchase tickets, and order food and drinks. Features a seamless cashless experience with QR-based entry and in-app ordering, plus crew management tools for event staff.',
     technologies: ['React Native', 'TypeScript'],
     demo: 'https://chi.app/',
     image: '/chi-app.webp',
@@ -12,15 +12,35 @@ const projects = [
     company: 'CHI',
   },
   {
+    name: 'CHI Backstage',
+    description:
+      'The comprehensive platform for event organizers to create and manage events end-to-end. Features include crew coordination and scheduling, product management for merchandise and concessions, real-time event operations, and detailed analytics to streamline the entire event lifecycle.',
+    technologies: ['React.js', 'TypeScript'],
+    demo: 'https://chi.app/',
+    image: '/chi-backstage-mockup.webp',
+    status: 'active',
+    company: 'CHI',
+  },
+  {
+    name: 'CHI Tickets',
+    description:
+      'The web version of CHI that allows users to browse events and purchase tickets directly from their browser. Provides a streamlined checkout experience for event-goers who prefer web over mobile.',
+    technologies: ['React.js', 'TypeScript'],
+    demo: 'https://chi.app/',
+    image: '/chi-tickets-mockup.webp',
+    status: 'active',
+    company: 'CHI',
+  },
+  {
     name: 'Vospay',
     description:
       "Vospay is looking to revolutionize the traditional multifinance industry and expand its market reach. One of the goals is to facilitate online transactions with multifinance platforms. Vospay is bridging multifinance customers with a large number of Indonesia's e-commerce platforms.",
-    technologies: ['React'],
+    technologies: ['React.js'],
     demo: 'https://www.linkedin.com/company/vostropay-paramarta-nusantara/',
     publication:
       'https://swa.co.id/read/343209/vospay-hadirkan-opsi-pembiayaan-dari-berbagai-perusahaan',
     design: 'https://www.sixtytwo.co/works/vospay',
-    image: '/vospay-mockup-2.webp',
+    image: '/vospay-mockup.webp',
     status: 'archived',
   },
   {
@@ -36,29 +56,11 @@ const projects = [
     name: 'Marketwurks',
     description:
       'Marketwurks allows you to easily and affordably manage your market. Enhanced the platform with new features including drag & drop functionality for forms, new form types, labelling system, and maintained the application by fixing regressions and bugs.',
-    technologies: ['React'],
+    technologies: ['React.js'],
     demo: 'https://www.marketwurks.com',
     demoVideo: 'https://vimeo.com/marketwurks',
     image: '/marketwurks-dashboard.webp',
     status: 'active',
-  },
-  {
-    name: 'ProCost',
-    description:
-      'Budget management system designed specifically for construction companies. Led architectural design decisions and was in charge of frontend development using modern React and GraphQL stack.',
-    technologies: ['Next.js', 'GraphQL'],
-    image: '/procost-mockup.webp',
-    status: 'archived',
-    company: 'GDIS',
-  },
-  {
-    name: 'ProLogs',
-    description:
-      'A ticketing software MVP for PT. TPK Koja (a container terminal company) to manage daily operations of container handling. Built the entire MVP single-handedly in less than a month.',
-    technologies: ['React.js', 'GraphQL'],
-    image: '/prologs-mockup.webp',
-    status: 'archived',
-    company: 'GDIS',
   },
 ];
 

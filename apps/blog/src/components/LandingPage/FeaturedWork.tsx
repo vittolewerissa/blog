@@ -8,7 +8,7 @@ const workExperience = [
     title: 'Senior Front End Engineer',
     company: 'CHI',
     href: 'https://chi.app/',
-    logo: '/chi-logo.png',
+    logo: '/chi-logo.webp',
     description:
       'Leading major React Native upgrades across iOS and Android platforms, navigating breaking changes across multiple versions. Focused on reducing technical debt by removing deprecated packages, cleaning up legacy code, and resolving lint violations to improve code quality and maintainability.',
     technologies: ['React Native', 'TypeScript', 'Vite'],
@@ -19,7 +19,7 @@ const workExperience = [
     title: 'Senior Front End Engineer',
     company: 'TipTip',
     href: 'https://www.tiptip.id/',
-    logo: '/tiptip-logo.png',
+    logo: '/tiptip-logo.webp',
     description:
       'Built and maintained multiple user-facing and internal applications using Next.js and TypeScript. Delivered product features and engineering initiatives while consistently meeting sprint deadlines. Optimized web performance to support high-scale ticketing events for major concerts, handling large traffic spikes efficiently.',
     technologies: ['Next.js', 'TypeScript', 'Retool'],
@@ -30,7 +30,7 @@ const workExperience = [
     title: 'Senior Front End Engineer',
     company: 'Phantom Network',
     href: 'https://www.phantom.sh/',
-    logo: '/pxn-logo.png',
+    logo: '/pxn-logo.webp',
     description:
       'Contributed to the successful launch of key features for the #1 NFT project on OpenSea. Developed a Discord-like real-time chat MVP while collaborating with a cross-functional team. Delivered major product features and resolved critical bugs, significantly improving platform stability and user experience.',
     technologies: ['Next.js', 'TypeScript'],
@@ -41,7 +41,7 @@ const workExperience = [
     title: 'Front End Engineer',
     company: 'GDIS',
     href: 'https://www.linkedin.com/company/gdis-inovasi-indonesia/',
-    logo: '/gdis-logo.png',
+    logo: '/gdis-logo.webp',
     description:
       'Led a team of developers while mentoring junior engineers and overseeing all front-end deliverables. Revamped the core product from scratch using React and GraphQL, improving load times and reducing maintenance overhead. Eliminated legacy code and technical debt, resulting in faster feature delivery and fewer bugs.',
     technologies: ['React.js', 'TypeScript', 'GraphQL'],
@@ -52,7 +52,7 @@ const workExperience = [
     title: 'Front End Engineer',
     company: 'KodeFox',
     href: 'https://kodefox.com/',
-    logo: '/kodefox-logo.png',
+    logo: '/kodefox-logo.webp',
     description:
       'Delivered multiple client applications including web apps with React and mobile apps with React Native. Modernized legacy applications by upgrading to the latest React and integrating Redux for state management. Contributed to VisionUI, a no-code framework for rapid app generation. Led technical workshops and mentored developers at various organizations.',
     technologies: [

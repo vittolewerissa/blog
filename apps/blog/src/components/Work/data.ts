@@ -20,7 +20,65 @@ export type ProjectWithImage = {
 
 export type ProjectWithoutImage = Omit<ProjectWithImage, 'image'>;
 
-export const CHIProjects: Array<ProjectWithImage> = [];
+export const CHIProjects: Array<ProjectWithImage> = [
+  {
+    name: 'CHI App',
+    href: 'https://chi.app/',
+    date: { dateFrom: 'Apr 2025', dateTo: 'Present' },
+    description:
+      'A mobile event ticketing platform where users can discover events, purchase tickets, and order food and drinks. Features a seamless cashless experience with QR-based entry and in-app ordering, plus crew management tools for event staff.',
+    technologyUsed: ['React Native', 'TypeScript'],
+    responsibilities: [
+      'Build and maintain the mobile app',
+      'Implement ticketing and ordering features',
+    ],
+    image: {
+      src: '/chi-app.webp',
+      alt: 'CHI App mobile ticketing platform',
+      aspectRatio: 'aspect-w-4 aspect-h-4',
+      objectFit: 'object-contain',
+      withMixBlend: true,
+    },
+  },
+  {
+    name: 'CHI Tickets',
+    href: 'https://chi.app/',
+    date: { dateFrom: 'Apr 2025', dateTo: 'Present' },
+    description:
+      'The web version of CHI that allows users to browse events and purchase tickets directly from their browser. Provides a streamlined checkout experience for event-goers who prefer web over mobile.',
+    technologyUsed: ['React.js', 'TypeScript'],
+    responsibilities: [
+      'Build the web ticketing platform',
+      'Implement checkout and payment flows',
+    ],
+    image: {
+      src: '/chi-tickets-mockup.webp',
+      alt: 'CHI Tickets web platform',
+      aspectRatio: 'aspect-w-4 aspect-h-4',
+      objectFit: 'object-contain',
+      withMixBlend: true,
+    },
+  },
+  {
+    name: 'CHI Backstage',
+    href: 'https://chi.app/',
+    date: { dateFrom: 'Apr 2025', dateTo: 'Present' },
+    description:
+      'The comprehensive platform for event organizers to create and manage events end-to-end. Features include crew coordination and scheduling, product management for merchandise and concessions, real-time event operations, and detailed analytics to streamline the entire event lifecycle.',
+    technologyUsed: ['React.js', 'TypeScript'],
+    responsibilities: [
+      'Build the event management dashboard',
+      'Implement crew coordination features',
+    ],
+    image: {
+      src: '/chi-backstage-mockup.webp',
+      alt: 'CHI Backstage event management platform',
+      aspectRatio: 'aspect-w-4 aspect-h-4',
+      objectFit: 'object-contain',
+      withMixBlend: true,
+    },
+  },
+];
 
 export const GDISProjects: Array<ProjectWithImage> = [
   {
@@ -31,7 +89,7 @@ export const GDISProjects: Array<ProjectWithImage> = [
     technologyUsed: ['React', 'TailwindCSS'],
     responsibilities: ['Single handedly build the MVP in less than a month.'],
     image: {
-      src: '/prologs-mockup.png',
+      src: '/prologs-mockup.webp',
       alt: 'Showcasing Marketwurks app dashboard look.',
       aspectRatio: 'aspect-w-4 aspect-h-4',
       objectFit: 'object-contain',
@@ -53,7 +111,7 @@ export const GDISProjects: Array<ProjectWithImage> = [
       'Too many features with too few engineers (only 2 -- that includes me)',
     ],
     image: {
-      src: '/procost-mockup.png',
+      src: '/procost-mockup.webp',
       alt: 'Showcasing Marketwurks app dashboard look.',
       aspectRatio: 'aspect-w-4 aspect-h-4',
       objectFit: 'object-contain',
@@ -74,7 +132,7 @@ export const KodefoxProjects: Array<ProjectWithImage> = [
       'Developed account registration & activation (for an in-depth look of what the UI looks like, please visit: https://www.sixtytwo.co/works/vospay)',
     ],
     image: {
-      src: '/vospay-mockup.png',
+      src: '/vospay-mockup.webp',
       alt: 'Showcasing Marketwurks app dashboard look.',
       aspectRatio: 'aspect-w-4 aspect-h-4',
       objectFit: 'object-contain',
@@ -93,7 +151,7 @@ export const KodefoxProjects: Array<ProjectWithImage> = [
       'Build the backend using Node.js and MongoDB',
     ],
     image: {
-      src: '/zumi-mockup.png',
+      src: '/zumi-mockup.webp',
       alt: 'Showcasing Zumi app mockups.',
       aspectRatio: 'aspect-w-4 aspect-h-4',
       objectFit: 'object-contain',
@@ -112,7 +170,7 @@ export const KodefoxProjects: Array<ProjectWithImage> = [
       'Maintain application by fixing regression and bugs.',
     ],
     image: {
-      src: '/marketwurks-dashboard.png',
+      src: '/marketwurks-dashboard.webp',
       alt: 'Showcasing Marketwurks app dashboard look.',
       aspectRatio: 'aspect-w-4 aspect-h-4',
       objectFit: 'object-cover',
@@ -130,7 +188,7 @@ export const KodefoxProjects: Array<ProjectWithImage> = [
       'Revamp the app from ground up using new technology but with the same design.',
     ],
     image: {
-      src: '/karsa-mockup.png',
+      src: '/karsa-mockup.webp',
       alt: 'Showcasing Karsa app mockup look.',
       aspectRatio: 'aspect-w-4 aspect-h-4',
       objectFit: 'object-cover',
