@@ -32,6 +32,35 @@ const projects = [
     company: 'CHI',
   },
   {
+    name: 'TipTip',
+    description:
+      'An event ticketing platform where users can discover, buy, and sell tickets for concerts, festivals, and live events across Indonesia. Also features community creation tools, live streaming capabilities, and a marketplace for digital products.',
+    technologies: ['Next.js', 'TypeScript'],
+    demo: 'https://tiptip.id/',
+    image: '/tiptip-mockup.webp',
+    status: 'active',
+    company: 'TipTip',
+  },
+  {
+    name: 'TipTip Hub',
+    description:
+      'A platform for creators to manage their events and digital products. Also enables supporters to promote creator products through an affiliate system, helping creators grow their audience and revenue.',
+    technologies: ['Next.js', 'TypeScript'],
+    demo: 'https://tiptip.id/',
+    image: '/tiptip-hub-mockup.webp',
+    status: 'active',
+    company: 'TipTip',
+  },
+  {
+    name: 'ProCost',
+    description:
+      'A budget management system designed specifically for construction companies. Features project cost tracking, budget allocation, expense monitoring, and financial reporting to help construction firms manage their finances effectively.',
+    technologies: ['React.js', 'GraphQL'],
+    image: '/procost-mockup.webp',
+    status: 'archived',
+    company: 'GDIS',
+  },
+  {
     name: 'Vospay',
     description:
       "Vospay is looking to revolutionize the traditional multifinance industry and expand its market reach. One of the goals is to facilitate online transactions with multifinance platforms. Vospay is bridging multifinance customers with a large number of Indonesia's e-commerce platforms.",
@@ -43,6 +72,7 @@ const projects = [
     image: '/vospay-mockup.webp',
     status: 'archived',
   },
+
   {
     name: 'Zumi',
     description:
