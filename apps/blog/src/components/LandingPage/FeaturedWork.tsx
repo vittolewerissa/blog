@@ -9,11 +9,9 @@ const workExperience = [
     company: 'CHI',
     href: 'https://chi.app/',
     logo: '/chi-logo.png',
-    bulletPoints: [
-      'Orchestrated a major React Native upgrade (0.64 → 0.76.9), resolving 12+ versions of breaking changes across iOS and Android.',
-      'Reduced technical debt by 40% by removing 20+ deprecated packages, purging dead code, and resolving 500+ lint violations.',
-    ],
-    technologies: ['React Native', 'React', 'TypeScript'],
+    description:
+      'Leading major React Native upgrades across iOS and Android platforms, navigating breaking changes across multiple versions. Focused on reducing technical debt by removing deprecated packages, cleaning up legacy code, and resolving lint violations to improve code quality and maintainability.',
+    technologies: ['React Native', 'TypeScript', 'Vite'],
   },
   {
     id: 'tiptip',
@@ -22,12 +20,9 @@ const workExperience = [
     company: 'TipTip',
     href: 'https://www.tiptip.id/',
     logo: '/tiptip-logo.png',
-    bulletPoints: [
-      'Developed and maintained 5 applications (user-facing and internal tools) using Next.js, TypeScript, and Retool.',
-      'Shipped 10+ product-led features and 5 engineering initiatives, consistently meeting sprint deadlines 1-4 weeks.',
-      'Enhanced web performance to support high-scale ticketing events e.g., Green Day, managing 30k capacity and 100 RPS.',
-    ],
-    technologies: ['Next.js', 'TypeScript', 'Zustand', 'Retool', 'Jest'],
+    description:
+      'Built and maintained multiple user-facing and internal applications using Next.js and TypeScript. Delivered product features and engineering initiatives while consistently meeting sprint deadlines. Optimized web performance to support high-scale ticketing events for major concerts, handling large traffic spikes efficiently.',
+    technologies: ['Next.js', 'TypeScript', 'Retool'],
   },
   {
     id: 'phantom-network',
@@ -36,12 +31,9 @@ const workExperience = [
     company: 'Phantom Network',
     href: 'https://www.phantom.sh/',
     logo: '/pxn-logo.png',
-    bulletPoints: [
-      'Contributed to the successful launch of key features for the #1 NFT project on OpenSea, helping drive $70 million in secondary sales and securing the top global ranking within two weeks of onboarding.',
-      'Developed a Discord-like chat MVP within, collaborating with an 8-member cross-functional team.',
-      'Delivered 3 major product features and resolved 50 critical bugs, improving platform stability by 35% and enhancing user experience, as reflected in a 20% decrease in reported issues',
-    ],
-    technologies: ['Next.js', 'React.js', 'TypeScript', 'Jest'],
+    description:
+      'Contributed to the successful launch of key features for the #1 NFT project on OpenSea. Developed a Discord-like real-time chat MVP while collaborating with a cross-functional team. Delivered major product features and resolved critical bugs, significantly improving platform stability and user experience.',
+    technologies: ['Next.js', 'TypeScript'],
   },
   {
     id: 'gdis',
@@ -50,12 +42,9 @@ const workExperience = [
     company: 'GDIS',
     href: 'https://www.linkedin.com/company/gdis-inovasi-indonesia/',
     logo: '/gdis-logo.png',
-    bulletPoints: [
-      'Led a team of 4 developers, mentoring junior engineers while overseeing all front-end deliverables.',
-      'Revamped the core product from scratch within, upgrading to the latest React & GraphQL, which reduced load times by 60% and cut maintenance overhead by 25%, enabling faster feature development.',
-      'Eliminated 25% lines of legacy code, reducing technical debt, cutting bug rates by 40%, and improving development efficiency, leading to a 30% faster feature delivery time.',
-    ],
-    technologies: ['React.js', 'TypeScript', 'GraphQL', 'Redux', 'Jest'],
+    description:
+      'Led a team of developers while mentoring junior engineers and overseeing all front-end deliverables. Revamped the core product from scratch using React and GraphQL, improving load times and reducing maintenance overhead. Eliminated legacy code and technical debt, resulting in faster feature delivery and fewer bugs.',
+    technologies: ['React.js', 'TypeScript', 'GraphQL'],
   },
   {
     id: 'kodefox',
@@ -64,22 +53,14 @@ const workExperience = [
     company: 'KodeFox',
     href: 'https://kodefox.com/',
     logo: '/kodefox-logo.png',
-    bulletPoints: [
-      'Delivered 4 client apps (2 web apps with React.js and 2 mobile apps with React Native).',
-      'Refactored legacy app MarketWurks, upgrading it to ES6 latest React version, integrating Redux for state management.',
-      'Contributed to VisionUI, a no-code framework enabling Prudential Indonesia to rapidly generate web & mobile apps.',
-      'Led a one-week training/workshop for BTPN Bank and Jenius teams.',
-      "Mentored developers through Kodefox's workshops at Traveloka, Skystar Ventures, and other organizations.",
-    ],
+    description:
+      'Delivered multiple client applications including web apps with React and mobile apps with React Native. Modernized legacy applications by upgrading to the latest React and integrating Redux for state management. Contributed to VisionUI, a no-code framework for rapid app generation. Led technical workshops and mentored developers at various organizations.',
     technologies: [
       'React.js',
       'React Native',
       'Node.js',
       'GraphQL',
       'REST API',
-      'Redux',
-      'JavaScript',
-      'Jest',
     ],
   },
 ];
@@ -187,17 +168,10 @@ export default function RecentWork() {
                         </div>
                       </div>
 
-                      {job.bulletPoints && (
-                        <ul className='text-gray-300 mb-4 leading-relaxed space-y-2'>
-                          {job.bulletPoints.map((point, pointIndex) => (
-                            <li key={pointIndex} className='flex items-start'>
-                              <span className='text-sky-400 mr-3 mt-1.5 text-xs'>
-                                •
-                              </span>
-                              <span>{point}</span>
-                            </li>
-                          ))}
-                        </ul>
+                      {job.description && (
+                        <p className='text-gray-300 mb-4 leading-relaxed'>
+                          {job.description}
+                        </p>
                       )}
 
                       <div className='flex flex-wrap gap-2'>
@@ -215,30 +189,6 @@ export default function RecentWork() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className='mt-12'>
-            <a
-              href='/resume.pdf'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='inline-flex items-center px-6 py-3 bg-white/5 text-white hover:bg-white/10 transition-all duration-300 font-medium rounded-full border border-white/10 hover:border-white/20 group'
-            >
-              <svg
-                className='mr-2 w-4 h-4'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'
-                />
-              </svg>
-              View Full Resume
-            </a>
           </div>
         </div>
       </div>

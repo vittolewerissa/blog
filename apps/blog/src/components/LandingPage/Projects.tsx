@@ -2,47 +2,52 @@ import Link from 'next/link';
 
 const projects = [
   {
-    name: 'Marketwurks',
+    name: 'CHI App',
     description:
-      'Marketwurks allows you to easily and affordably manage your market. Enhanced the platform with new features including drag & drop functionality for forms, new form types, labelling system, and maintained the application by fixing regressions and bugs.',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    demo: 'https://www.marketwurks.com',
-    demoVideo: 'https://vimeo.com/marketwurks',
-    image: '/marketwurks-dashboard.png',
+      'An event ticketing platform where users can purchase tickets, food, and drinks at events. Also includes crew management features for event organizers.',
+    technologies: ['React Native', 'TypeScript'],
+    demo: 'https://chi.app/',
+    image: '/chi-app.webp',
     status: 'active',
+    company: 'CHI',
   },
   {
     name: 'Vospay',
     description:
       "Vospay is looking to revolutionize the traditional multifinance industry and expand its market reach. One of the goals is to facilitate online transactions with multifinance platforms. Vospay is bridging multifinance customers with a large number of Indonesia's e-commerce platforms.",
-    technologies: ['React', 'Node.js'],
+    technologies: ['React'],
     demo: 'https://www.linkedin.com/company/vostropay-paramarta-nusantara/',
     publication:
       'https://swa.co.id/read/343209/vospay-hadirkan-opsi-pembiayaan-dari-berbagai-perusahaan',
     design: 'https://www.sixtytwo.co/works/vospay',
-    image: '/vospay-dashboard-2.png',
+    image: '/vospay-mockup-2.webp',
     status: 'archived',
   },
   {
     name: 'Zumi',
     description:
       'Zumi is a parent-teacher communication app that disrupts traditional WhatsApp-based communication. Built frontend pages including signup flow, bulletins, class news, and reports, plus developed the backend using Node.js and MongoDB for seamless parent-teacher interactions.',
-    technologies: ['React Native', 'Node.js', 'MongoDB'],
+    technologies: ['React Native'],
     demo: 'https://zumiapp.com/',
-    image: '/zumi-mockup.png',
+    image: '/zumi-mockup.webp',
     status: 'archived',
+  },
+  {
+    name: 'Marketwurks',
+    description:
+      'Marketwurks allows you to easily and affordably manage your market. Enhanced the platform with new features including drag & drop functionality for forms, new form types, labelling system, and maintained the application by fixing regressions and bugs.',
+    technologies: ['React'],
+    demo: 'https://www.marketwurks.com',
+    demoVideo: 'https://vimeo.com/marketwurks',
+    image: '/marketwurks-dashboard.webp',
+    status: 'active',
   },
   {
     name: 'ProCost',
     description:
       'Budget management system designed specifically for construction companies. Led architectural design decisions and was in charge of frontend development using modern React and GraphQL stack.',
-    technologies: [
-      'React (with Next.js)',
-      'Apollo Client',
-      'GraphQL',
-      'TailwindCSS',
-    ],
-    image: '/procost-mockup.png',
+    technologies: ['Next.js', 'GraphQL'],
+    image: '/procost-mockup.webp',
     status: 'archived',
     company: 'GDIS',
   },
@@ -50,8 +55,8 @@ const projects = [
     name: 'ProLogs',
     description:
       'A ticketing software MVP for PT. TPK Koja (a container terminal company) to manage daily operations of container handling. Built the entire MVP single-handedly in less than a month.',
-    technologies: ['React (with Next.js)', 'TailwindCSS'],
-    image: '/prologs-mockup.png',
+    technologies: ['React.js', 'GraphQL'],
+    image: '/prologs-mockup.webp',
     status: 'archived',
     company: 'GDIS',
   },
