@@ -59,15 +59,6 @@ export default function Header() {
                   </span>
                 </div>
 
-                <div className='inline-flex items-center px-3 py-1.5 bg-emerald-500/10 backdrop-blur-md rounded-full border border-emerald-500/20 hover:border-emerald-500/40 transition-colors duration-300'>
-                  <span className='relative flex h-2 w-2 mr-2'>
-                    <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75'></span>
-                    <span className='relative inline-flex rounded-full h-2 w-2 bg-emerald-500'></span>
-                  </span>
-                  <span className='text-emerald-400 text-sm font-medium'>
-                    Available for new projects
-                  </span>
-                </div>
               </div>
 
               <div className='flex items-center gap-4 mt-6 slide-in-bottom-3'>
