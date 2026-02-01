@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function WorkshopAndEvents() {
   return (
     <div id='workshops' className='py-12 sm:pb-4 px-4 sm:px-8 lg:pt-0 lg:pb-20'>
@@ -15,10 +17,12 @@ export default function WorkshopAndEvents() {
         <div className='flex flex-col gap-8'>
           <div className='group relative flex flex-col lg:flex-row bg-gray-900/40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-gray-800/80 transition-colors transition-shadow duration-300 ring-1 ring-white/10 hover:ring-sky-500/50 hover:shadow-lg hover:shadow-sky-900/20'>
             <div className='relative w-full lg:w-2/5 h-64 lg:h-auto overflow-hidden bg-gray-800'>
-              <img
+              <Image
                 src='/bptn-workshop.webp'
                 alt='BTPN and Jenius team workshop'
-                className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
+                layout='fill'
+                objectFit='cover'
+                className='transition-transform duration-500 group-hover:scale-105'
               />
               <div className='absolute inset-0 bg-gradient-to-t from-sky-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
             </div>
@@ -79,10 +83,12 @@ export default function WorkshopAndEvents() {
 
           <div className='group relative flex flex-col lg:flex-row bg-gray-900/40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-gray-800/80 transition-colors transition-shadow duration-300 ring-1 ring-white/10 hover:ring-sky-500/50 hover:shadow-lg hover:shadow-sky-900/20'>
             <div className='relative w-full lg:w-2/5 h-64 lg:h-auto overflow-hidden bg-gray-800'>
-              <img
+              <Image
                 src='/tech-in-asia-conference.webp'
                 alt='Zumi x KodeFox in Tech in Asia Conference'
-                className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
+                layout='fill'
+                objectFit='cover'
+                className='transition-transform duration-500 group-hover:scale-105'
               />
               <div className='absolute inset-0 bg-gradient-to-t from-sky-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
             </div>

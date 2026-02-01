@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import {
   getAllCompanies,
@@ -91,7 +92,7 @@ export default function CompanyWork({ company, articles }: Props) {
             <div className='flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-6'>
               {company.logo && (
                 <div
-                  className={`w-16 h-16 rounded-xl border border-sand/60 overflow-hidden flex-shrink-0 ${
+                  className={`w-16 h-16 rounded-xl border border-sand/60 overflow-hidden flex-shrink-0 relative ${
                     company.name === 'TipTip' || company.name === 'Phantom Network'
                       ? 'bg-transparent p-0'
                       : company.name === 'KodeFox'
@@ -101,19 +102,24 @@ export default function CompanyWork({ company, articles }: Props) {
                       : 'bg-cream p-3'
                   }`}
                 >
-                  <img
+                  <Image
                     src={company.logo}
                     alt={`${company.displayName} logo`}
-                    className={`w-full h-full ${
+                    layout='fill'
+                    objectFit={
                       company.name === 'TipTip' ||
                       company.name === 'Phantom Network' ||
                       company.name === 'CHI'
-                        ? 'object-cover rounded-lg'
-                        : 'object-contain'
-                    }`}
-                    width={64}
-                    height={64}
-                    loading='lazy'
+                        ? 'cover'
+                        : 'contain'
+                    }
+                    className={
+                      company.name === 'TipTip' ||
+                      company.name === 'Phantom Network' ||
+                      company.name === 'CHI'
+                        ? 'rounded-lg'
+                        : ''
+                    }
                   />
                 </div>
               )}

@@ -131,6 +131,7 @@ export default function RecentWork() {
                             width={40}
                             height={40}
                             loading='lazy'
+                            decoding='async'
                             onError={(e) => {
                               const target = e.currentTarget;
                               const fallback =

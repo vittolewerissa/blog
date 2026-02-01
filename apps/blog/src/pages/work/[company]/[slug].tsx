@@ -16,6 +16,33 @@ const Sandpack = dynamic(() => import('../../../components/Sandpack'), {
   ssr: false,
 });
 
+// MDX Image component with next/image optimization
+const MDXImage = ({ src, alt, ...props }: { src?: string; alt?: string; [key: string]: unknown }) => {
+  if (!src) return null;
+  
+  // Check if it's an external URL
+  const isExternal = src.startsWith('http://') || src.startsWith('https://');
+  
+  if (isExternal) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={src} alt={alt || ''} {...props} loading='lazy' />;
+  }
+  
+  // For local images, use Next.js Image with fill layout
+  return (
+    <div className='relative w-full aspect-video my-6'>
+      <Image
+        src={src}
+        alt={alt || ''}
+        layout='fill'
+        objectFit='contain'
+        className='rounded-lg'
+        loading='lazy'
+      />
+    </div>
+  );
+};
+
 type Props = {
   company: Company;
   article: {
@@ -155,7 +182,7 @@ export default function WorkArticle({ company, article }: Props) {
             <div className='mt-6 flex items-center gap-3 p-4 bg-warm-white rounded-xl border border-sand/70'>
               {company.logo && (
                 <div
-                  className={`w-10 h-10 rounded-lg border border-sand/60 overflow-hidden flex-shrink-0 ${
+                  className={`w-10 h-10 rounded-lg border border-sand/60 overflow-hidden flex-shrink-0 relative ${
                     company.name === 'TipTip' ||
                     company.name === 'Phantom Network'
                       ? 'bg-transparent p-0'
@@ -166,19 +193,24 @@ export default function WorkArticle({ company, article }: Props) {
                       : 'bg-cream p-2'
                   }`}
                 >
-                  <img
+                  <Image
                     src={company.logo}
                     alt={`${company.displayName} logo`}
-                    className={`w-full h-full ${
+                    layout='fill'
+                    objectFit={
                       company.name === 'TipTip' ||
                       company.name === 'Phantom Network' ||
                       company.name === 'CHI'
-                        ? 'object-cover rounded'
-                        : 'object-contain'
-                    }`}
-                    width={40}
-                    height={40}
-                    loading='lazy'
+                        ? 'cover'
+                        : 'contain'
+                    }
+                    className={
+                      company.name === 'TipTip' ||
+                      company.name === 'Phantom Network' ||
+                      company.name === 'CHI'
+                        ? 'rounded'
+                        : ''
+                    }
                   />
                 </div>
               )}
@@ -204,7 +236,7 @@ export default function WorkArticle({ company, article }: Props) {
           <article className='prose prose-amber max-w-none text-espresso prose-headings:font-display prose-headings:text-espresso prose-strong:text-espresso prose-a:text-terracotta hover:prose-a:text-terracotta-light prose-code:text-espresso prose-code:bg-warm-white prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:border prose-code:border-sand/60 prose-pre:bg-warm-white prose-pre:text-espresso prose-pre:border prose-pre:border-sand/70 prose-pre:rounded-xl prose-pre:p-4 prose-pre:shadow-[0_8px_24px_-18px_rgba(44,36,32,0.28)] prose-pre:overflow-x-auto'>
             <MDXRemote
               {...article.content}
-              components={{ Sandpack, code: CodeHighlighter }}
+              components={{ Sandpack, code: CodeHighlighter, img: MDXImage }}
               lazy
             />
           </article>

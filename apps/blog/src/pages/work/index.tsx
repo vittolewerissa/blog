@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllCompanies, Company } from '../../utils/workContent';
 
 type Props = {
@@ -73,7 +74,7 @@ export default function WorkIndex({ companies }: Props) {
 
                         {company.logo && (
                           <div
-                            className={`w-12 h-12 rounded-xl overflow-hidden border border-sand/60 ${
+                            className={`w-12 h-12 rounded-xl overflow-hidden border border-sand/60 relative ${
                               company.name === 'TipTip' ||
                               company.name === 'Phantom Network'
                                 ? 'bg-transparent'
@@ -82,19 +83,17 @@ export default function WorkIndex({ companies }: Props) {
                                 : 'bg-cream p-2'
                             }`}
                           >
-                            <img
+                            <Image
                               src={company.logo}
                               alt={`${company.displayName} logo`}
-                              className={`w-full h-full ${
+                              layout='fill'
+                              objectFit={
                                 company.name === 'TipTip' ||
                                 company.name === 'Phantom Network' ||
                                 company.name === 'CHI'
-                                  ? 'object-cover'
-                                  : 'object-contain'
-                              }`}
-                              width={48}
-                              height={48}
-                              loading='lazy'
+                                  ? 'cover'
+                                  : 'contain'
+                              }
                             />
                           </div>
                         )}
