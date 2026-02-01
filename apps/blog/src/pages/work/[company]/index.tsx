@@ -48,137 +48,168 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 export default function CompanyWork({ company, articles }: Props) {
   const router = useRouter();
   return (
-    <div className='bg-gray-900 min-h-screen pt-0 pb-4 px-4 sm:px-6 lg:pt-0 lg:pb-20 lg:px-8'>
-      <div className='max-w-lg mx-auto lg:max-w-5xl py-12'>
-        <button
-          onClick={() => {
-            if (window.history.state && window.history.state.idx > 0) {
-              router.back();
-            } else {
-              router.push('/');
-            }
-          }}
-          className='inline-flex items-center px-3 py-1.5 text-sm bg-white/5 text-gray-300 hover:text-white hover:bg-white/10 rounded-full transition-all border border-white/5 hover:border-white/20 mb-8 group'
-        >
-          <svg
-            className='w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform'
-            fill='none'
-            stroke='currentColor'
-            viewBox='0 0 24 24'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={2}
-              d='M15 19l-7-7 7-7'
-            />
-          </svg>
-          Back
-        </button>
+    <div id='main-content' className='relative'>
+      <div
+        className='absolute inset-0 pointer-events-none'
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 45% at 65% 30%, rgba(139, 69, 87, 0.08) 0%, transparent 70%)',
+        }}
+      />
 
-        <div className='flex items-start gap-6 mb-8'>
-          {company.logo && (
-            <div
-              className={`w-16 h-16 rounded-lg shadow-sm flex-shrink-0 ${
-                company.name === 'TipTip' || company.name === 'Phantom Network'
-                  ? 'bg-transparent p-0'
-                  : company.name === 'KodeFox'
-                  ? 'bg-white p-1'
-                  : company.name === 'CHI'
-                  ? 'bg-black p-3'
-                  : 'bg-white p-3'
-              }`}
+      <section className='relative pb-12 lg:pb-16'>
+        <div className='mt-12 px-4 sm:px-8 sm:mt-20 lg:mt-24'>
+          <div className='mx-auto max-w-lg lg:max-w-5xl'>
+            <button
+              onClick={() => {
+                if (window.history.state && window.history.state.idx > 0) {
+                  router.back();
+                } else {
+                  router.push('/');
+                }
+              }}
+              className='inline-flex items-center px-3 py-1.5 text-sm bg-warm-white text-walnut hover:text-espresso hover:bg-cream rounded-full transition-colors border border-sand mb-8 group'
             >
-              <img
-                src={company.logo}
-                alt={`${company.displayName} logo`}
-                className={`w-full h-full ${
-                  company.name === 'TipTip' ||
-                  company.name === 'Phantom Network' ||
-                  company.name === 'CHI'
-                    ? 'object-cover rounded-lg'
-                    : 'object-contain'
-                }`}
-              />
+              <svg
+                className='w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+                aria-hidden='true'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M15 19l-7-7 7-7'
+                />
+              </svg>
+              Back
+            </button>
+
+            <div className='flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-6'>
+              {company.logo && (
+                <div
+                  className={`w-16 h-16 rounded-xl border border-sand/60 overflow-hidden flex-shrink-0 ${
+                    company.name === 'TipTip' || company.name === 'Phantom Network'
+                      ? 'bg-transparent p-0'
+                      : company.name === 'KodeFox'
+                      ? 'bg-cream p-1.5'
+                      : company.name === 'CHI'
+                      ? 'bg-black p-3'
+                      : 'bg-cream p-3'
+                  }`}
+                >
+                  <img
+                    src={company.logo}
+                    alt={`${company.displayName} logo`}
+                    className={`w-full h-full ${
+                      company.name === 'TipTip' ||
+                      company.name === 'Phantom Network' ||
+                      company.name === 'CHI'
+                        ? 'object-cover rounded-lg'
+                        : 'object-contain'
+                    }`}
+                    width={64}
+                    height={64}
+                    loading='lazy'
+                  />
+                </div>
+              )}
+              <div>
+                <h1 className='text-3xl sm:text-4xl tracking-tight font-normal font-display text-espresso text-balance'>
+                  {company.displayName}
+                </h1>
+                <p className='text-[11px] font-mono text-stone uppercase tracking-[0.2em] mt-3'>
+                  {company.period}
+                </p>
+                <p className='text-walnut mt-4 text-base sm:text-lg leading-relaxed max-w-2xl'>
+                  {company.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className='max-w-lg mx-auto lg:max-w-5xl px-4 sm:px-8'>
+        <div className='border-t border-sand' />
+      </div>
+
+      <section className='py-16 lg:py-20 px-4 sm:px-8'>
+        <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
+          <div className='flex items-baseline justify-between mb-10'>
+            <h2 className='text-2xl sm:text-3xl tracking-tight font-normal font-display text-espresso text-balance'>
+              Case Studies
+            </h2>
+            <span className='hidden sm:block text-sm text-stone font-mono'>
+              {articles.length} entries
+            </span>
+          </div>
+
+          {articles.length > 0 ? (
+            <div className='grid gap-6 lg:grid-cols-2 lg:gap-8'>
+              {articles.map((article) => {
+                const dateString = new Date(article.date).toLocaleDateString(
+                  undefined,
+                  {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  }
+                );
+
+                const href = `/work/${company.id}/${article.slug}`;
+
+                return (
+                  <Link key={article.slug} href={href} passHref>
+                    <a className='group block rounded-2xl bg-warm-white border border-sand/80 hover:border-terracotta/30 transition-colors duration-200 p-6 sm:p-7'>
+                      <p className='text-[11px] font-mono text-stone uppercase tracking-[0.2em]'>
+                        <time dateTime={article.date}>{dateString}</time>
+                      </p>
+                      <h3 className='mt-3 text-xl sm:text-2xl font-display font-semibold text-espresso group-hover:text-terracotta transition-colors'>
+                        {article.title}
+                      </h3>
+                      <p className='mt-2 text-walnut/80 leading-relaxed line-clamp-3'>
+                        {article.description}
+                      </p>
+                      <div className='mt-6 flex items-center justify-between text-sm text-stone'>
+                        <span className='inline-flex items-center gap-1 text-terracotta/80 group-hover:text-terracotta transition-colors'>
+                          Read article
+                          <svg
+                            className='w-4 h-4 transform group-hover:translate-x-0.5 transition-transform'
+                            fill='none'
+                            stroke='currentColor'
+                            viewBox='0 0 24 24'
+                            aria-hidden='true'
+                          >
+                            <path
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              strokeWidth={1.5}
+                              d='M17 8l4 4m0 0l-4 4m4-4H3'
+                            />
+                          </svg>
+                        </span>
+                        <span className='text-[11px] font-mono text-stone'>
+                          {article.readingTime.text}
+                        </span>
+                      </div>
+                    </a>
+                  </Link>
+                );
+              })}
+            </div>
+          ) : (
+            <div className='pt-6'>
+              <p className='text-walnut text-center py-12'>
+                No case studies available yet for {company.displayName}. Check
+                back soon!
+              </p>
             </div>
           )}
-          <div>
-            <h1 className='text-3xl tracking-tight font-extrabold text-white sm:text-4xl'>
-              {company.displayName}
-            </h1>
-            <p className='text-sm font-medium text-gray-400 uppercase tracking-wider mt-2'>
-              {company.period}
-            </p>
-            <p className='text-gray-300 mt-3 font-medium text-md'>
-              {company.description}
-            </p>
-          </div>
         </div>
-      </div>
-
-      <div className='relative max-w-lg mx-auto divide-y-2 divide-gray-800 lg:max-w-5xl'>
-        <div className='pb-4'>
-          <h2 className='text-2xl tracking-tight font-extrabold text-white sm:text-3xl'>
-            Case Studies
-          </h2>
-        </div>
-
-        {articles.length > 0 ? (
-          <div className='pt-8 grid gap-8 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-12'>
-            {articles.map((article) => {
-              const dateString = new Date(article.date).toLocaleDateString(
-                undefined,
-                {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                }
-              );
-
-              const href = `/work/${company.id}/${article.slug}`;
-
-              return (
-                <div
-                  key={article.slug}
-                  className='transition duration-300 bg-gray-700 border-gray-700 border-2 rounded-lg p-6 hover:border-sky-400 hover:shadow-2xl overflow-hidden flex flex-col sm:hover:scale-105 cursor-pointer'
-                >
-                  <p className='text-sm text-gray-400'>
-                    <time dateTime={article.date}>{dateString}</time>
-                  </p>
-                  <div className='mt-2 block'>
-                    <a href={href}>
-                      <p className='text-xl font-semibold text-white hover:underline'>
-                        {article.title}
-                      </p>
-                    </a>
-                  </div>
-                  <p className='mt-3 text-base text-gray-400 flex-1'>
-                    {article.description}
-                  </p>
-                  <div className='mt-3 flex items-center justify-between flex-none'>
-                    <a
-                      href={href}
-                      className='text-base font-semibold text-sky-600 hover:text-sky-500'
-                    >
-                      Read article
-                    </a>
-                    <span className='text-sm text-gray-500'>
-                      {article.readingTime.text}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <div className='pt-8'>
-            <p className='text-gray-400 text-center py-12'>
-              No case studies available yet for {company.displayName}. Check
-              back soon!
-            </p>
-          </div>
-        )}
-      </div>
+      </section>
     </div>
   );
 }

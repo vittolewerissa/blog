@@ -8,7 +8,7 @@ export const companyMetadata: Record<string, Omit<Company, 'id'>> = {
     logo: '/chi-logo.webp',
     period: 'SEP 2025 — PRESENT',
     description:
-      'CHI is an all-in-one cashless payments, ticketing and intelligence platform for seamless event management. As Senior Front End Engineer, I maintain CHI App (React Native), CHI POS, CHI Backstage, and CHI PWA, enabling event organizers to accept payments, manage ticketing, and gain real-time insights.',
+      'CHI is an AI-powered event management platform for cashless payments, ticketing, and operational intelligence across 3 web apps and 2 mobile apps. As Senior Front End Engineer, I own the mobile suite architecture and stability, contributing across web and backend.',
   },
   tiptip: {
     name: 'TipTip',
@@ -16,7 +16,7 @@ export const companyMetadata: Record<string, Omit<Company, 'id'>> = {
     logo: '/tiptip-logo.webp',
     period: 'OCT 2022 — APR 2025',
     description:
-      'TipTip is a ticketing platform for events in Indonesia. As Senior Front End Engineer, I developed and maintained 5 applications, shipped 10+ product-led features, and enhanced web performance to support high-scale events like Green Day (30k capacity, 100 RPS).',
+      'TipTip is a Series A creator-economy platform in Southeast Asia ($25M raised). I joined in year one as Senior Front End Engineer on the Event Team, leading consumer ticketing experiences and internal event dashboards.',
   },
   'phantom-network': {
     name: 'Phantom Network',
@@ -24,7 +24,7 @@ export const companyMetadata: Record<string, Omit<Company, 'id'>> = {
     logo: '/pxn-logo.webp',
     period: 'APR 2022 — OCT 2022',
     description:
-      'Phantom Network is an NFT project that reached #1 on OpenSea with $70M in secondary sales. As Senior Front End Engineer, I built a Discord-like chat app for their community and initialized their marketplace platform.',
+      'Phantom Network is a NZ-based Web3 brand behind a top-ranking NFT collection ($70M secondary volume in two weeks). I built a Discord-style chat MVP and core modules for a stable global launch.',
   },
   kodefox: {
     name: 'KodeFox',
@@ -32,7 +32,7 @@ export const companyMetadata: Record<string, Omit<Company, 'id'>> = {
     logo: '/kodefox-logo.webp',
     period: 'OCT 2016 — NOV 2019',
     description:
-      'KodeFox is a software house specializing in web and mobile development. As Front End Engineer, I delivered 4 client apps (React.js and React Native), contributed to VisionUI (a no-code framework for Prudential Indonesia), and mentored developers through workshops at Traveloka and other organizations.',
+      'KodeFox is a Jakarta-based software house founded by a former Meta engineer (YC & Google alumnus), serving early startups and enterprise clients like Prudential, Sampoerna, and Sinarmas.',
   },
   gdis: {
     name: 'GDIS',
@@ -40,6 +40,6 @@ export const companyMetadata: Record<string, Omit<Company, 'id'>> = {
     logo: '/gdis-logo.webp',
     period: 'DEC 2019 — APR 2022',
     description:
-      'GDIS is an IT consulting company. As Front End Engineer, I led a team of 4 developers, revamped the core product using React & GraphQL (reducing load times by 60%), and eliminated 25% of legacy code.',
+      'GDIS is a Jakarta-based enterprise software firm for construction and manufacturing. I led a 4-person squad to modernize the core product and owned front-end delivery.',
   },
 };

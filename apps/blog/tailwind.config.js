@@ -5,9 +5,21 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
-        display: ['Space Grotesk', ...defaultTheme.fontFamily.sans],
+        sans: ['Outfit', ...defaultTheme.fontFamily.sans],
+        display: ['Fraunces', 'Georgia', ...defaultTheme.fontFamily.serif],
         mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
+      },
+      colors: {
+        cream: 'var(--color-cream)',
+        'warm-white': 'var(--color-warm-white)',
+        sand: 'var(--color-sand)',
+        stone: 'var(--color-stone)',
+        walnut: 'var(--color-walnut)',
+        espresso: 'var(--color-espresso)',
+        terracotta: {
+          DEFAULT: 'var(--color-terracotta)',
+          light: 'var(--color-terracotta-light)',
+        },
       },
     },
   },

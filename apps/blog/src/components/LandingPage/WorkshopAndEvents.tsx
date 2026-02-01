@@ -13,7 +13,7 @@ export default function WorkshopAndEvents() {
         </div>
 
         <div className='flex flex-col gap-8'>
-          <div className='group relative flex flex-col lg:flex-row bg-gray-900/40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-gray-800/80 transition-all duration-300 ring-1 ring-white/10 hover:ring-sky-500/50 hover:shadow-lg hover:shadow-sky-900/20'>
+          <div className='group relative flex flex-col lg:flex-row bg-gray-900/40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-gray-800/80 transition-colors transition-shadow duration-300 ring-1 ring-white/10 hover:ring-sky-500/50 hover:shadow-lg hover:shadow-sky-900/20'>
             <div className='relative w-full lg:w-2/5 h-64 lg:h-auto overflow-hidden bg-gray-800'>
               <img
                 src='/bptn-workshop.webp'
@@ -77,7 +77,7 @@ export default function WorkshopAndEvents() {
             </div>
           </div>
 
-          <div className='group relative flex flex-col lg:flex-row bg-gray-900/40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-gray-800/80 transition-all duration-300 ring-1 ring-white/10 hover:ring-sky-500/50 hover:shadow-lg hover:shadow-sky-900/20'>
+          <div className='group relative flex flex-col lg:flex-row bg-gray-900/40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-gray-800/80 transition-colors transition-shadow duration-300 ring-1 ring-white/10 hover:ring-sky-500/50 hover:shadow-lg hover:shadow-sky-900/20'>
             <div className='relative w-full lg:w-2/5 h-64 lg:h-auto overflow-hidden bg-gray-800'>
               <img
                 src='/tech-in-asia-conference.webp'

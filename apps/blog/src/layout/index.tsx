@@ -8,7 +8,7 @@ type Props = {
 
 export default function Layout({ children }: Props) {
   return (
-    <div className='bg-gray-900 min-h-screen overflow-hidden'>
+    <div className='bg-cream min-h-screen'>
       <Head />
       <Navigation />
       {children}

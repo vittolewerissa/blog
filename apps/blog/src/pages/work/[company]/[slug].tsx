@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { ClockIcon } from '@heroicons/react/solid';
+import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import {
@@ -99,79 +99,117 @@ export default function WorkArticle({ company, article }: Props) {
   });
 
   return (
-    <div className='pt-0 pb-4 px-4 sm:px-6 lg:pt-0 lg:pb-20 lg:px-8'>
-      <div className='max-w-lg mx-auto lg:max-w-5xl py-12'>
-        <Link href={`/work/${company.id}`}>
-          <a className='inline-flex items-center text-sky-500 hover:text-sky-400 mb-6'>
-            <svg
-              className='w-4 h-4 mr-2'
-              fill='none'
-              stroke='currentColor'
-              viewBox='0 0 24 24'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth={2}
-                d='M15 19l-7-7 7-7'
+    <div id='main-content' className='relative'>
+      <div
+        className='absolute inset-0 pointer-events-none'
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 45% at 65% 30%, rgba(139, 69, 87, 0.08) 0%, transparent 70%)',
+        }}
+      />
+
+      <section className='relative pb-10 lg:pb-16'>
+        <div className='mt-12 px-4 sm:px-8 sm:mt-20 lg:mt-24'>
+          <div className='mx-auto max-w-lg lg:max-w-5xl'>
+            <Link href={`/work/${company.id}`} passHref>
+              <a className='inline-flex items-center px-3 py-1.5 text-sm bg-warm-white text-walnut hover:text-espresso hover:bg-cream rounded-full transition-colors border border-sand mb-6 group'>
+                <svg
+                  className='w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                  aria-hidden='true'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M15 19l-7-7 7-7'
+                  />
+                </svg>
+                Back to {company.displayName}
+              </a>
+            </Link>
+
+            <h1 className='text-3xl sm:text-4xl lg:text-5xl tracking-tight font-normal font-display text-espresso text-balance'>
+              {article.title}
+            </h1>
+
+            <div className='mt-4 flex flex-wrap items-center gap-2 text-sm text-stone font-medium'>
+              <Image
+                src='/me.jpeg'
+                alt='Vitto Lewerissa'
+                width={24}
+                height={24}
+                className='rounded-full'
               />
-            </svg>
-            Back to {company.displayName}
-          </a>
-        </Link>
-
-        <h1 className='text-3xl tracking-tight font-extrabold text-white sm:text-4xl'>
-          {article.title}
-        </h1>
-
-        <div className='flex items-center pt-4 pb-6 text-gray-400 font-medium'>
-          <img src='/me.jpeg' alt='' className='w-6 h-6 rounded-full mr-2' />
-          <span>Vitto Lewerissa / {dateString}</span>
-          <span className='mx-2'>•</span>
-          <ClockIcon className='w-4 h-4 mt-0.5 mr-1' />
-          <span>{article.readingTime.text}</span>
-        </div>
-
-        <div className='mb-6 flex items-center gap-3 p-4 bg-gray-700/30 rounded-lg border border-gray-700'>
-          {company.logo && (
-            <div
-              className={`w-10 h-10 rounded shadow-sm flex-shrink-0 ${
-                company.name === 'TipTip' || company.name === 'Phantom Network'
-                  ? 'bg-transparent p-0'
-                  : company.name === 'KodeFox'
-                    ? 'bg-white p-1'
-                    : company.name === 'CHI'
-                      ? 'bg-black p-2'
-                      : 'bg-white p-2'
-              }`}
-            >
-              <img
-                src={company.logo}
-                alt={`${company.displayName} logo`}
-                className={`w-full h-full ${
-                  company.name === 'TipTip' ||
-                  company.name === 'Phantom Network' ||
-                  company.name === 'CHI'
-                    ? 'object-cover rounded'
-                    : 'object-contain'
-                }`}
-              />
+              <span>Vitto Lewerissa</span>
+              <span className='text-sand'>•</span>
+              <span>{dateString}</span>
+              <span className='text-sand'>•</span>
+              <span className='font-mono text-[11px] uppercase tracking-[0.2em]'>
+                {article.readingTime.text}
+              </span>
             </div>
-          )}
-          <div>
-            <p className='text-sm text-gray-400'>Part of the series</p>
-            <p className='text-white font-semibold'>{company.displayName}</p>
+
+            <div className='mt-6 flex items-center gap-3 p-4 bg-warm-white rounded-xl border border-sand/70'>
+              {company.logo && (
+                <div
+                  className={`w-10 h-10 rounded-lg border border-sand/60 overflow-hidden flex-shrink-0 ${
+                    company.name === 'TipTip' ||
+                    company.name === 'Phantom Network'
+                      ? 'bg-transparent p-0'
+                      : company.name === 'KodeFox'
+                      ? 'bg-cream p-1'
+                      : company.name === 'CHI'
+                      ? 'bg-black p-2'
+                      : 'bg-cream p-2'
+                  }`}
+                >
+                  <img
+                    src={company.logo}
+                    alt={`${company.displayName} logo`}
+                    className={`w-full h-full ${
+                      company.name === 'TipTip' ||
+                      company.name === 'Phantom Network' ||
+                      company.name === 'CHI'
+                        ? 'object-cover rounded'
+                        : 'object-contain'
+                    }`}
+                    width={40}
+                    height={40}
+                    loading='lazy'
+                  />
+                </div>
+              )}
+              <div>
+                <p className='text-[11px] font-mono text-stone uppercase tracking-[0.2em]'>
+                  Part of the series
+                </p>
+                <p className='text-espresso font-semibold'>
+                  {company.displayName}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <article className='prose text-white prose-a:text-sky-500 prose-headings:text-gray-200 prose-strong:text-white prose-base lg:prose-lg max-w-none prose-pre:p-0 lg:prose-pre:p-0 lg:prose-pre:border-r-0'>
-          <MDXRemote
-            {...article.content}
-            components={{ Sandpack, code: CodeHighlighter }}
-            lazy
-          />
-        </article>
+      <div className='max-w-lg mx-auto lg:max-w-5xl px-4 sm:px-8'>
+        <div className='border-t border-sand' />
       </div>
+
+      <section className='py-14 lg:py-20 px-4 sm:px-8'>
+        <div className='max-w-lg mx-auto lg:max-w-5xl'>
+          <article className='prose prose-amber max-w-none text-espresso prose-headings:font-display prose-headings:text-espresso prose-strong:text-espresso prose-a:text-terracotta hover:prose-a:text-terracotta-light prose-code:text-espresso prose-code:bg-warm-white prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:border prose-code:border-sand/60 prose-pre:bg-warm-white prose-pre:text-espresso prose-pre:border prose-pre:border-sand/70 prose-pre:rounded-xl prose-pre:p-4 prose-pre:shadow-[0_8px_24px_-18px_rgba(44,36,32,0.28)] prose-pre:overflow-x-auto'>
+            <MDXRemote
+              {...article.content}
+              components={{ Sandpack, code: CodeHighlighter }}
+              lazy
+            />
+          </article>
+        </div>
+      </section>
     </div>
   );
 }

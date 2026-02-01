@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 type IconProps = {
   className: string;
 };
@@ -37,86 +35,67 @@ const socialLinks = [
       </svg>
     ),
   },
+  {
+    name: 'Twitter',
+    href: 'https://x.com/vittolewerissa',
+    icon: (props: IconProps) => (
+      <svg fill='currentColor' viewBox='0 0 24 24' {...props}>
+        <path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' />
+      </svg>
+    ),
+  },
 ];
 
 export default function Footer() {
   return (
-    <footer className='bg-gray-900' aria-labelledby='footer-heading'>
+    <footer aria-labelledby='footer-heading'>
       <h2 id='footer-heading' className='sr-only'>
         Footer
       </h2>
-      <div className='mt-8 p-8 border-t border-gray-700'>
+      <div className='mt-8 p-8 border-t border-sand'>
         <div className='max-w-lg mx-auto lg:max-w-5xl'>
           <div className='flex flex-col lg:flex-row lg:justify-between lg:items-start space-y-4 lg:space-y-0'>
             <div className='flex flex-col space-y-4'>
               <div>
-                <h3 className='tracking-wider uppercase font-bold text-sm lg:text-lg text-white'>
+                <h3 className='font-display text-base lg:text-lg tracking-[0.02em] text-espresso'>
                   Vitto Lewerissa
                 </h3>
               </div>
               <div className='flex space-x-3'>
                 {socialLinks.map((item) => (
-                  <div
+                  <a
                     key={item.name}
-                    className='p-2 cursor-pointer text-gray-400 hover:text-gray-300 transition-colors duration-200'
-                    onClick={() => {
-                      window.open(item.href, '_blank', 'noreferrer');
-                    }}
+                    href={item.href}
+                    target={item.href.startsWith('mailto:') ? undefined : '_blank'}
+                    rel={
+                      item.href.startsWith('mailto:')
+                        ? undefined
+                        : 'noopener noreferrer'
+                    }
+                    className='p-2 text-stone hover:text-espresso transition-colors duration-200'
+                    aria-label={item.name}
                   >
-                    <span className='sr-only'>{item.name}</span>
                     <item.icon className='h-6 w-6' />
-                  </div>
+                  </a>
                 ))}
               </div>
               <div>
-                <p className='text-base text-gray-400'>
-                  Copyright © 2025. All rights reserved.
+                <p className='text-base text-stone'>
+                  Copyright &copy; 2025. All rights reserved.
                 </p>
               </div>
             </div>
-            <div>
-              <div className='text-base text-gray-400'>
-                <p className='flex items-center'>
-                  Crafted with
-                  <svg
-                    className='h-4 w-4 mx-1 text-red-500'
-                    fill='currentColor'
-                    viewBox='0 0 24 24'
-                  >
-                    <path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' />
-                  </svg>
-                  and passion using&nbsp;
-                  <a
-                    href='https://nextjs.org'
-                    target='_blank'
-                    rel='noreferrer'
-                    className='text-gray-300 hover:text-white'
-                  >
-                    Next.js
-                  </a>
-                </p>
-                <p>
-                  styled with&nbsp;
-                  <a
-                    href='https://tailwindcss.com'
-                    target='_blank'
-                    rel='noreferrer'
-                    className='text-gray-300 hover:text-white'
-                  >
-                    Tailwind CSS
-                  </a>
-                  , deployed seamlessly on&nbsp;
-                  <a
-                    href='https://vercel.com'
-                    target='_blank'
-                    rel='noreferrer'
-                    className='text-gray-300 hover:text-white'
-                  >
-                    Vercel
-                  </a>
-                  .
-                </p>
-              </div>
+            <div className='text-sm text-stone flex items-center gap-1'>
+              Built with
+              <svg
+                className='h-3.5 w-3.5 text-terracotta'
+                fill='currentColor'
+                viewBox='0 0 24 24'
+                aria-hidden='true'
+              >
+                <path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' />
+              </svg>
+              in Bali
             </div>
           </div>
         </div>

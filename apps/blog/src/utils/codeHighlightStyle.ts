@@ -11,7 +11,7 @@ const style = {
     wordWrap: 'normal',
     // fontFamily: 'Menlo, Monaco, "Courier New", monospace',
     // fontSize: '14px',
-    color: '#76d9e6',
+    color: '#2C2420',
     textShadow: 'none',
   },
   'pre[class*="language-"]': {
@@ -26,12 +26,12 @@ const style = {
     wordWrap: 'normal',
     // fontFamily: 'Menlo, Monaco, "Courier New", monospace',
     // fontSize: '14px',
-    color: '#76d9e6',
+    color: '#2C2420',
     textShadow: 'none',
-    background: '#2a2a2a',
+    background: '#F5F0E8',
     padding: '15px',
-    borderRadius: '4px',
-    border: '1px solid #e1e1e8',
+    borderRadius: '12px',
+    border: '1px solid #E8E0D4',
     overflow: 'auto',
     position: 'relative',
   },
@@ -39,11 +39,10 @@ const style = {
     fontSize: '1em',
   },
   ':not(pre) > code[class*="language-"]': {
-    background: '#2a2a2a',
+    background: '#F5F0E8',
     padding: '0.15em 0.2em 0.05em',
-    borderRadius: '.3em',
-    border: '0.13em solid #7a6652',
-    boxShadow: '1px 1px 0.3em -0.1em #000 inset',
+    borderRadius: '.35em',
+    border: '1px solid #E8E0D4',
   },
   'pre[class*="language-"] code': {
     whiteSpace: 'pre',
@@ -53,106 +52,106 @@ const style = {
     Opacity: '.7',
   },
   comment: {
-    color: '#6f705e',
+    color: '#9A8F85',
   },
   prolog: {
-    color: '#6f705e',
+    color: '#9A8F85',
   },
   doctype: {
-    color: '#6f705e',
+    color: '#9A8F85',
   },
   cdata: {
-    color: '#6f705e',
+    color: '#9A8F85',
   },
   operator: {
-    color: '#a77afe',
+    color: '#8B4557',
   },
   boolean: {
-    color: '#a77afe',
+    color: '#8B4557',
   },
   number: {
-    color: '#a77afe',
+    color: '#8B4557',
   },
   'attr-name': {
-    color: '#e6d06c',
+    color: '#6B5E53',
   },
   string: {
-    color: '#e6d06c',
+    color: '#6B5E53',
   },
   entity: {
-    color: '#e6d06c',
+    color: '#6B5E53',
     cursor: 'help',
   },
   url: {
-    color: '#e6d06c',
+    color: '#6B5E53',
   },
   '.language-css .token.string': {
-    color: '#e6d06c',
+    color: '#6B5E53',
   },
   '.style .token.string': {
     color: '#e6d06c',
   },
   selector: {
-    color: '#a6e22d',
+    color: '#2C2420',
   },
   inserted: {
-    color: '#a6e22d',
+    color: '#2C2420',
   },
   atrule: {
-    color: '#ef3b7d',
+    color: '#8B4557',
   },
   'attr-value': {
-    color: '#ef3b7d',
+    color: '#8B4557',
   },
   keyword: {
-    color: '#ef3b7d',
+    color: '#8B4557',
   },
   important: {
-    color: '#ef3b7d',
+    color: '#8B4557',
     fontWeight: 'bold',
   },
   deleted: {
-    color: '#ef3b7d',
+    color: '#8B4557',
   },
   regex: {
-    color: '#76d9e6',
+    color: '#2C2420',
   },
   statement: {
-    color: '#76d9e6',
+    color: '#2C2420',
     fontWeight: 'bold',
   },
   placeholder: {
-    color: '#fff',
+    color: '#2C2420',
   },
   variable: {
-    color: '#fff',
+    color: '#2C2420',
   },
   bold: {
     fontWeight: 'bold',
   },
   punctuation: {
-    color: '#bebec5',
+    color: '#6B5E53',
   },
   italic: {
     fontStyle: 'italic',
   },
   'code.language-markup': {
-    color: '#f9f9f9',
+    color: '#2C2420',
   },
   'code.language-markup .token.tag': {
-    color: '#ef3b7d',
+    color: '#8B4557',
   },
   'code.language-markup .token.attr-name': {
-    color: '#a6e22d',
+    color: '#2C2420',
   },
   'code.language-markup .token.attr-value': {
-    color: '#e6d06c',
+    color: '#6B5E53',
   },
   'code.language-markup .token.style': {
-    color: '#76d9e6',
+    color: '#2C2420',
   },
   'code.language-markup .token.script': {
-    color: '#76d9e6',
+    color: '#2C2420',
   },
   'code.language-markup .token.script .token.keyword': {
     color: '#76d9e6',
@@ -167,7 +166,7 @@ const style = {
     right: '0',
     padding: '0',
     marginTop: '1em',
-    background: 'rgba(255, 255, 255, 0.08)',
+    background: 'rgba(139, 69, 87, 0.08)',
     pointerEvents: 'none',
     lineHeight: 'inherit',
     whiteSpace: 'pre',
@@ -179,15 +178,15 @@ const style = {
     left: '.6em',
     minWidth: '1em',
     padding: '0.2em 0.5em',
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    color: 'black',
+    backgroundColor: 'rgba(139, 69, 87, 0.22)',
+    color: '#2C2420',
     font: 'bold 65%/1 sans-serif',
     height: '1em',
     lineHeight: '1em',
     textAlign: 'center',
     borderRadius: '999px',
     textShadow: 'none',
-    boxShadow: '0 1px 1px rgba(255, 255, 255, 0.7)',
+    boxShadow: '0 1px 1px rgba(139, 69, 87, 0.2)',
   },
   'pre[data-line] .line-highlight[data-end]:after': {
     content: 'attr(data-end)',
@@ -196,15 +195,15 @@ const style = {
     left: '.6em',
     minWidth: '1em',
     padding: '0.2em 0.5em',
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    color: 'black',
+    backgroundColor: 'rgba(139, 69, 87, 0.22)',
+    color: '#2C2420',
     font: 'bold 65%/1 sans-serif',
     height: '1em',
     lineHeight: '1em',
     textAlign: 'center',
     borderRadius: '999px',
     textShadow: 'none',
-    boxShadow: '0 1px 1px rgba(255, 255, 255, 0.7)',
+    boxShadow: '0 1px 1px rgba(139, 69, 87, 0.2)',
     bottom: '.4em',
   },
 };

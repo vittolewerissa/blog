@@ -1,191 +1,251 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 const workExperience = [
   {
     id: 'chi',
-    period: 'SEP 2025 — PRESENT',
-    title: 'Senior Front End Engineer',
+    period: '2025 — Present',
+    title: 'Senior Full Stack Engineer',
     company: 'CHI',
     href: 'https://chi.app/',
     logo: '/chi-logo.webp',
+    logoBg: 'bg-[#000000]',
+    logoPadding: 'p-1.5',
+    logoFit: 'object-contain',
     description:
-      'Leading major React Native upgrades across iOS and Android platforms, navigating breaking changes across multiple versions. Focused on reducing technical debt by removing deprecated packages, cleaning up legacy code, and resolving lint violations to improve code quality and maintainability.',
-    technologies: ['React Native', 'TypeScript', 'Vite'],
+      'Orchestrated a major React Native upgrade across 14+ versions, led a mobile app revamp migrating 480+ files to TypeScript, and supported consolidation of microservices into a unified NestJS monorepo.',
+    technologies: ['React', 'React Native', 'TypeScript', 'Node.js', 'NestJS', 'Prisma'],
+    current: true,
   },
   {
     id: 'tiptip',
-    period: 'OCT 2022 — APR 2025',
+    period: '2022 — 2025',
     title: 'Senior Front End Engineer',
     company: 'TipTip',
     href: 'https://www.tiptip.id/',
     logo: '/tiptip-logo.webp',
+    logoBg: 'bg-transparent',
+    logoPadding: 'p-0',
+    logoFit: 'object-cover rounded-lg',
     description:
-      'Built and maintained multiple user-facing and internal applications using Next.js and TypeScript. Delivered product features and engineering initiatives while consistently meeting sprint deadlines. Optimized web performance to support high-scale ticketing events for major concerts, handling large traffic spikes efficiently.',
-    technologies: ['Next.js', 'TypeScript', 'Retool'],
+      'Shipped 15+ product-led features and scaled the platform for concerts like Green Day and Muse, serving 2M+ users and 5M+ tickets across 50+ cities.',
+    technologies: ['Next.js', 'TypeScript'],
   },
   {
     id: 'phantom-network',
-    period: 'APR 2022 — OCT 2022',
+    period: '2022',
     title: 'Senior Front End Engineer',
     company: 'Phantom Network',
     href: 'https://www.phantom.sh/',
     logo: '/pxn-logo.webp',
+    logoBg: 'bg-transparent',
+    logoPadding: 'p-0',
+    logoFit: 'object-cover rounded-lg',
     description:
-      'Contributed to the successful launch of key features for the #1 NFT project on OpenSea. Developed a Discord-like real-time chat MVP while collaborating with a cross-functional team. Delivered major product features and resolved critical bugs, significantly improving platform stability and user experience.',
+      'Delivered a Discord-style chat MVP and Web3 marketplace in 3 months with a 10-member async engineering team across 5 countries.',
     technologies: ['Next.js', 'TypeScript'],
   },
   {
     id: 'gdis',
-    period: 'DEC 2019 — APR 2022',
-    title: 'Front End Engineer',
+    period: '2019 — 2022',
+    title: 'Lead Front End Engineer',
     company: 'GDIS',
     href: 'https://www.linkedin.com/company/gdis-inovasi-indonesia/',
     logo: '/gdis-logo.webp',
+    logoBg: 'bg-white',
+    logoPadding: 'p-1.5',
+    logoFit: 'object-contain',
     description:
-      'Led a team of developers while mentoring junior engineers and overseeing all front-end deliverables. Revamped the core product from scratch using React and GraphQL, improving load times and reducing maintenance overhead. Eliminated legacy code and technical debt, resulting in faster feature delivery and fewer bugs.',
-    technologies: ['React.js', 'TypeScript', 'GraphQL'],
+      'Led 4 developers to rebuild a legacy construction management app, reducing development time by 75% and achieving 1-month MVP delivery through CI/CD, test automation, and standardized code quality.',
+    technologies: ['React.js', 'TypeScript', 'GraphQL', 'Apollo'],
   },
   {
     id: 'kodefox',
-    period: 'OCT 2016 — NOV 2019',
-    title: 'Front End Engineer',
+    period: '2016 — 2019',
+    title: 'Software Engineer',
     company: 'KodeFox',
     href: 'https://kodefox.com/',
     logo: '/kodefox-logo.webp',
+    logoBg: 'bg-white',
+    logoPadding: 'p-1',
+    logoFit: 'object-contain',
     description:
-      'Delivered multiple client applications including web apps with React and mobile apps with React Native. Modernized legacy applications by upgrading to the latest React and integrating Redux for state management. Contributed to VisionUI, a no-code framework for rapid app generation. Led technical workshops and mentored developers at various organizations.',
+      'Delivered 4 client apps for enterprise clients including Prudential, Sinarmas, and Sampoerna. Mentored 50+ developers through hands-on front-end workshops.',
     technologies: [
       'React.js',
       'React Native',
       'Node.js',
-      'GraphQL',
-      'REST API',
     ],
   },
 ];
 
 export default function RecentWork() {
-  const router = useRouter();
-
   return (
-    <div id='work' className='py-8 sm:pb-4 px-4 sm:px-8 lg:pt-0 lg:pb-20'>
-      <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
-        <div>
-          <h2 className='text-2xl tracking-tight font-extrabold font-display text-white sm:text-3xl mb-8'>
-            Work Experience
-          </h2>
+    <div id='work' className='relative'>
+      {/* Section divider */}
+      <div className='max-w-lg mx-auto lg:max-w-5xl px-4 sm:px-8'>
+        <div className='border-t border-sand' />
+      </div>
 
+      <div className='py-20 lg:py-28 px-4 sm:px-8'>
+        <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
+          {/* Section header */}
+          <div className='flex items-baseline justify-between mb-14'>
+            <h2 className='text-3xl sm:text-4xl tracking-tight font-normal font-display text-espresso text-balance'>
+              Work Experience
+            </h2>
+            <span className='hidden sm:block text-sm text-stone font-mono'>
+              8+ years
+            </span>
+          </div>
+
+          {/* Timeline */}
           <div className='relative'>
-            <div className='space-y-6'>
-              {workExperience.map((job) => (
-                <div
-                  key={job.company}
-                  className='group relative p-6 rounded-lg transition-all duration-300 border border-transparent hover:bg-gray-800/30 hover:border-white/10 hover:shadow-lg cursor-pointer'
-                  onClick={() => router.push(`/work/${job.id}`)}
-                >
-                  {/* Vertical line segment with margin below company logo - hidden on hover */}
-                  <div className='absolute left-6 lg:left-12 top-32 bottom-0 w-0.5 bg-gradient-to-b from-sky-400 to-gray-600 opacity-50 group-hover:opacity-0 transition-opacity duration-300'></div>
+            {/* Vertical line */}
+            <div className='absolute left-[19px] top-2 bottom-2 w-px bg-sand hidden lg:block' />
 
-                  <div className='flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8'>
-                    <div className='lg:w-48 flex-shrink-0 relative'>
-                      <p className='text-sm font-medium text-gray-400 uppercase tracking-wider mb-3'>
-                        {job.period}
-                      </p>
-
-                      {/* Company logo */}
-                      <div
-                        className={`w-12 h-12 rounded-lg shadow-sm ${
-                          job.company === 'TipTip' ||
-                          job.company === 'Phantom Network'
-                            ? 'bg-transparent p-0'
-                            : job.company === 'KodeFox'
-                            ? 'bg-white p-1'
-                            : job.company === 'CHI'
-                            ? 'bg-black p-2.5'
-                            : 'bg-white p-2'
-                        }`}
-                      >
-                        <img
-                          src={job.logo}
-                          alt={`${job.company} logo`}
-                          className={`w-full h-full ${
-                            job.company === 'TipTip' ||
-                            job.company === 'Phantom Network' ||
-                            job.company === 'CHI'
-                              ? 'object-cover rounded-lg'
-                              : 'object-contain'
-                          }`}
-                          onError={(e) => {
-                            // Fallback if logo doesn't exist
-                            const target = e.currentTarget;
-                            const fallback =
-                              target.nextElementSibling as HTMLElement;
-                            target.style.display = 'none';
-                            if (fallback) {
-                              fallback.style.display = 'flex';
-                            }
-                          }}
-                        />
+            <div className='space-y-0'>
+              {workExperience.map((job, index) => (
+                <div key={job.company} className='group relative'>
+                  {/* Entry row */}
+                  <div
+                    className={`relative flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-0 py-7 lg:py-8 rounded-xl transition-colors duration-200 ${
+                      index < workExperience.length - 1
+                        ? 'border-b border-sand/60 lg:border-0'
+                        : ''
+                    } ${
+                      job.current
+                        ? 'lg:-mx-6 lg:px-6 bg-warm-white/60 lg:bg-warm-white/80 rounded-2xl border-0 lg:border-0'
+                        : 'lg:-mx-6 lg:px-6 hover:bg-warm-white/50 rounded-2xl'
+                    }`}
+                  >
+                    {/* Left: Logo on the timeline + Period */}
+                    <div className='flex items-center gap-4 lg:w-[280px] lg:flex-shrink-0'>
+                        {/* Logo (sits on the timeline line) */}
                         <div
-                          className='w-full h-full bg-gray-600 rounded flex items-center justify-center text-white text-xs font-bold'
-                          style={{ display: 'none' }}
+                          className={`relative z-10 w-10 h-10 rounded-xl shadow-sm flex-shrink-0 overflow-hidden ${job.logoBg} ${job.logoPadding}`}
                         >
-                          {job.company.charAt(0)}
+                          <img
+                            src={job.logo}
+                            alt={`${job.company} logo`}
+                            className={`w-full h-full ${job.logoFit}`}
+                            width={40}
+                            height={40}
+                            loading='lazy'
+                            onError={(e) => {
+                              const target = e.currentTarget;
+                              const fallback =
+                                target.nextElementSibling as HTMLElement;
+                              target.style.display = 'none';
+                              if (fallback) {
+                                fallback.style.display = 'flex';
+                              }
+                            }}
+                          />
+                          <div
+                            className='w-full h-full bg-stone rounded-xl flex items-center justify-center text-cream text-xs font-bold'
+                            style={{ display: 'none' }}
+                          >
+                            {job.company.charAt(0)}
+                          </div>
+                        </div>
+
+                        {/* Period + Now badge */}
+                        <div className='flex items-center gap-2.5'>
+                          <span className='text-[13px] text-stone font-mono tracking-wide'>
+                            {job.period}
+                          </span>
                         </div>
                       </div>
-                    </div>
 
-                    <div className='flex-1 pl-8 lg:pl-0'>
-                      <div className='mb-4'>
-                        <h3 className='text-xl font-semibold font-display text-white mb-1 group-hover:text-sky-400 transition-colors'>
-                          {job.title}
-                        </h3>
-                        <div className='flex items-center mb-2'>
-                          <Link href={job.href}>
+                      {/* Right: Content */}
+                    <div className='flex-1 min-w-0 pl-14 lg:pl-0'>
+                      {/* Company + Role */}
+                      <div className='mb-2'>
+                        <div className='flex items-baseline gap-2 flex-wrap'>
+                          <Link href={`/work/${job.id}`} passHref>
                             <a
-                              className='text-gray-300 hover:text-sky-400 group-hover:text-sky-400 transition-colors font-medium'
-                              target='_blank'
-                              rel='noopener noreferrer'
-                              onClick={(e) => e.stopPropagation()}
+                              className='inline-flex items-baseline gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-cream'
+                              aria-label={`View ${job.company} case study`}
                             >
-                              {job.company}
+                              <h3 className='text-[22px] font-display font-semibold text-espresso leading-tight group-hover:text-terracotta transition-colors'>
+                                {job.company}
+                              </h3>
+                              <span className='text-stone text-sm select-none'>
+                                /
+                              </span>
+                              <span className='text-walnut text-[15px] font-medium'>
+                                {job.title}
+                              </span>
                             </a>
                           </Link>
-                          <svg
-                            className='ml-2 w-4 h-4 text-gray-400'
-                            fill='none'
-                            stroke='currentColor'
-                            viewBox='0 0 24 24'
+                        </div>
+                        </div>
+
+                        {/* Description */}
+                        <p className='text-walnut/80 text-[15px] leading-relaxed mb-3 max-w-2xl'>
+                          {job.description}
+                        </p>
+
+                        {/* Tech + Link */}
+                        <div className='flex items-center gap-3 flex-wrap'>
+                          <div className='flex flex-wrap gap-1.5'>
+                            {job.technologies.map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className='px-2 py-0.5 text-[11px] font-mono font-medium text-stone bg-cream/80 rounded border border-sand/60'
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+
+                          <button
+                            type='button'
+                            className='relative z-20 inline-flex items-center gap-1 text-[13px] text-stone hover:text-terracotta transition-colors ml-auto'
+                            aria-label={`Visit ${job.company} site`}
+                            title={`Visit ${job.company} site`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              window.open(job.href, '_blank', 'noopener,noreferrer');
+                            }}
                           >
-                            <path
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                              strokeWidth={2}
-                              d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
-                            />
-                          </svg>
+                            <svg
+                              className='w-3.5 h-3.5'
+                              fill='none'
+                              stroke='currentColor'
+                              viewBox='0 0 24 24'
+                              aria-hidden='true'
+                            >
+                              <path
+                                strokeLinecap='round'
+                                strokeLinejoin='round'
+                                strokeWidth={2}
+                                d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+                              />
+                            </svg>
+                          </button>
                         </div>
                       </div>
 
-                      {job.description && (
-                        <p className='text-gray-300 mb-4 leading-relaxed'>
-                          {job.description}
-                        </p>
-                      )}
-
-                      <div className='flex flex-wrap gap-2'>
-                        {job.technologies.map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className='px-2.5 py-1 text-xs font-medium font-mono bg-white/5 text-gray-300 rounded-md border border-white/5'
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                      {/* Hover arrow */}
+                      <div className='relative z-20 hidden lg:flex items-center pl-4 pt-1 opacity-0 group-hover:opacity-100 transition-opacity'>
+                        <svg
+                          className='w-5 h-5 text-terracotta/60'
+                          fill='none'
+                          stroke='currentColor'
+                          viewBox='0 0 24 24'
+                          aria-hidden='true'
+                        >
+                          <path
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth={1.5}
+                            d='M17 8l4 4m0 0l-4 4m4-4H3'
+                          />
+                        </svg>
                       </div>
                     </div>
-                  </div>
                 </div>
               ))}
             </div>

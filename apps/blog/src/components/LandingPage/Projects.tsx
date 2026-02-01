@@ -1,20 +1,34 @@
+import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const projects = [
   {
     name: 'CHI App',
     description:
-      'A mobile event ticketing platform where users can discover events, purchase tickets, and order food and drinks. Features a seamless cashless experience with QR-based entry and in-app ordering, plus crew management tools for event staff.',
+      'Mobile event ticketing app for discovering events, purchasing tickets, and ordering food and drinks — all cashless with QR-based entry and in-app payments.',
     technologies: ['React Native', 'TypeScript'],
     demo: 'https://chi.app/',
     image: '/chi-app.webp',
     status: 'active',
     company: 'CHI',
+    featured: true,
+  },
+  {
+    name: 'TipTip',
+    description:
+      'Creator economy platform for ticketing, content, memberships, and live streaming. Serves 2M+ users across 50+ cities with concerts from Green Day, Dream Theater, and Muse.',
+    technologies: ['Next.js', 'TypeScript'],
+    demo: 'https://tiptip.id/',
+    image: '/tiptip-mockup.webp',
+    status: 'active',
+    company: 'TipTip',
+    featured: true,
   },
   {
     name: 'CHI Backstage',
     description:
-      'The comprehensive platform for event organizers to create and manage events end-to-end. Features include crew coordination and scheduling, product management for merchandise and concessions, real-time event operations, and detailed analytics to streamline the entire event lifecycle.',
+      'Back-office platform for event organizers to manage crew, tickets, vendors, and real-time event analytics.',
     technologies: ['React.js', 'TypeScript'],
     demo: 'https://chi.app/',
     image: '/chi-backstage-mockup.webp',
@@ -22,29 +36,9 @@ const projects = [
     company: 'CHI',
   },
   {
-    name: 'CHI Tickets',
-    description:
-      'The web version of CHI that allows users to browse events and purchase tickets directly from their browser. Provides a streamlined checkout experience for event-goers who prefer web over mobile.',
-    technologies: ['React.js', 'TypeScript'],
-    demo: 'https://chi.app/',
-    image: '/chi-tickets-mockup.webp',
-    status: 'active',
-    company: 'CHI',
-  },
-  {
-    name: 'TipTip',
-    description:
-      'An event ticketing platform where users can discover, buy, and sell tickets for concerts, festivals, and live events across Indonesia. Also features community creation tools, live streaming capabilities, and a marketplace for digital products.',
-    technologies: ['Next.js', 'TypeScript'],
-    demo: 'https://tiptip.id/',
-    image: '/tiptip-mockup.webp',
-    status: 'active',
-    company: 'TipTip',
-  },
-  {
     name: 'TipTip Hub',
     description:
-      'A platform for creators to manage their events and digital products. Also enables supporters to promote creator products through an affiliate system, helping creators grow their audience and revenue.',
+      'Platform for creators to manage events, digital products, and an affiliate system for audience growth.',
     technologies: ['Next.js', 'TypeScript'],
     demo: 'https://tiptip.id/',
     image: '/tiptip-hub-mockup.webp',
@@ -54,7 +48,7 @@ const projects = [
   {
     name: 'ProCost',
     description:
-      'A budget management system designed specifically for construction companies. Features project cost tracking, budget allocation, expense monitoring, and financial reporting to help construction firms manage their finances effectively.',
+      'Budget management system for construction and manufacturing companies — cost tracking, allocation, and financial reporting.',
     technologies: ['React.js', 'GraphQL'],
     image: '/procost-mockup.webp',
     status: 'archived',
@@ -63,7 +57,7 @@ const projects = [
   {
     name: 'Vospay',
     description:
-      "Vospay is looking to revolutionize the traditional multifinance industry and expand its market reach. One of the goals is to facilitate online transactions with multifinance platforms. Vospay is bridging multifinance customers with a large number of Indonesia's e-commerce platforms.",
+      "Fintech platform bridging multifinance customers with Indonesia's e-commerce ecosystem for seamless online transactions.",
     technologies: ['React.js'],
     demo: 'https://www.linkedin.com/company/vostropay-paramarta-nusantara/',
     publication:
@@ -71,194 +65,86 @@ const projects = [
     design: 'https://www.sixtytwo.co/works/vospay',
     image: '/vospay-mockup.webp',
     status: 'archived',
-  },
-
-  {
-    name: 'Zumi',
-    description:
-      'Zumi is a parent-teacher communication app that disrupts traditional WhatsApp-based communication. Built frontend pages including signup flow, bulletins, class news, and reports, plus developed the backend using Node.js and MongoDB for seamless parent-teacher interactions.',
-    technologies: ['React Native'],
-    demo: 'https://zumiapp.com/',
-    image: '/zumi-mockup.webp',
-    status: 'archived',
-  },
-  {
-    name: 'Marketwurks',
-    description:
-      'Marketwurks allows you to easily and affordably manage your market. Enhanced the platform with new features including drag & drop functionality for forms, new form types, labelling system, and maintained the application by fixing regressions and bugs.',
-    technologies: ['React.js'],
-    demo: 'https://www.marketwurks.com',
-    demoVideo: 'https://vimeo.com/marketwurks',
-    image: '/marketwurks-dashboard.webp',
-    status: 'active',
+    company: 'KodeFox',
   },
 ];
 
-export default function Projects() {
+function ProjectCard({
+  project,
+  large,
+}: {
+  project: (typeof projects)[number];
+  large?: boolean;
+}) {
+  const [imageError, setImageError] = useState(false);
+  const imageSizes = large
+    ? '(min-width: 1024px) 50vw, 100vw'
+    : '(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw';
+
   return (
-    <div id='projects' className='py-12 sm:pb-4 px-4 sm:px-8 lg:pt-0 lg:pb-20'>
-      <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
-        <div className='mb-12'>
-          <h2 className='text-2xl tracking-tight font-extrabold font-display text-white sm:text-3xl mb-8'>
-            Featured Projects
-          </h2>
-          <p className='text-gray-400 text-lg max-w-2xl'>
-            A collection of projects I&apos;ve worked on, ranging from web
-            applications to mobile apps.
-          </p>
-        </div>
+    <div
+      className={`group relative flex flex-col bg-warm-white rounded-2xl overflow-hidden transition-colors transition-shadow transition-transform duration-300 ring-1 ring-sand hover:ring-terracotta/30 hover:shadow-lg hover:shadow-espresso/5 ${
+        large ? 'lg:flex-row' : 'hover:-translate-y-0.5'
+      }`}
+    >
+      {/* Project Image */}
+      <div
+        className={`relative overflow-hidden bg-sand ${
+          large
+            ? 'w-full lg:w-1/2 h-56 lg:h-auto lg:min-h-[24rem]'
+            : 'w-full aspect-[16/10]'
+        }`}
+      >
+        {imageError ? (
+          <div className='w-full h-full bg-sand flex items-center justify-center text-walnut text-sm font-medium'>
+            {project.name}
+          </div>
+        ) : (
+          <Image
+            src={project.image}
+            alt={`${project.name} preview`}
+            layout='fill'
+            objectFit='cover'
+            className='transition-transform duration-500 group-hover:scale-[1.02]'
+            sizes={imageSizes}
+            onError={() => setImageError(true)}
+          />
+        )}
 
-        <div className='grid gap-8 lg:grid-cols-2 xl:grid-cols-3'>
-          {projects.map((project, index) => (
-            <div
-              key={project.name}
-              className='group relative flex flex-col bg-gray-900/40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-gray-800/60 transition-all duration-300 ring-1 ring-white/10 hover:ring-white/20'
+        <div className='absolute top-3 right-3 flex gap-2'>
+          {project.status === 'archived' && (
+            <span className='px-2.5 py-1 text-xs font-medium bg-espresso/60 backdrop-blur-md text-cream rounded-full border border-sand'>
+              Archived
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* Project Info */}
+      <div
+        className={`flex-1 flex flex-col ${
+          large ? 'p-6 lg:p-10' : 'p-5'
+        }`}
+      >
+        <div className='flex items-center justify-between mb-2'>
+          <h3
+            className={`font-bold font-display text-espresso group-hover:text-terracotta transition-colors ${
+              large ? 'text-2xl lg:text-3xl' : 'text-lg'
+            }`}
+          >
+            {project.name}
+          </h3>
+          {project.demo && (
+            <a
+              href={project.demo}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='p-1.5 text-stone hover:text-espresso hover:bg-sand/50 rounded-full transition-colors flex-shrink-0'
+              title='Visit Website'
+              aria-label={`Visit ${project.name} website`}
             >
-              {/* Project Image */}
-              <div className='relative w-full h-56 overflow-hidden bg-gray-800'>
-                <img
-                  src={project.image}
-                  alt={`${project.name} preview`}
-                  className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.style.display = 'none';
-                    const fallback = target.nextElementSibling as HTMLElement;
-                    if (fallback) {
-                      fallback.style.display = 'flex';
-                    }
-                  }}
-                />
-                <div
-                  className='w-full h-full bg-gray-800 flex items-center justify-center text-white text-sm font-medium'
-                  style={{ display: 'none' }}
-                >
-                  {project.name}
-                </div>
-
-                {/* Overlay with status */}
-                <div className='absolute top-3 right-3 flex gap-2'>
-                  {project.status === 'archived' && (
-                    <span className='px-2.5 py-1 text-xs font-medium bg-black/60 backdrop-blur-md text-gray-300 rounded-full border border-white/10'>
-                      Archived
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {/* Project Info */}
-              <div className='flex-1 p-6 flex flex-col'>
-                <div className='flex items-center justify-between mb-3'>
-                  <h3 className='text-xl font-bold font-display text-white group-hover:text-sky-400 transition-colors'>
-                    {project.name}
-                  </h3>
-                  <div className='flex gap-2'>
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all'
-                        title='Visit Website'
-                      >
-                        <svg
-                          className='w-5 h-5'
-                          fill='none'
-                          stroke='currentColor'
-                          viewBox='0 0 24 24'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
-                          />
-                        </svg>
-                      </a>
-                    )}
-                    {project.demoVideo && (
-                      <a
-                        href={project.demoVideo}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all'
-                        title='Watch Demo'
-                      >
-                        <svg
-                          className='w-5 h-5'
-                          fill='currentColor'
-                          viewBox='0 0 24 24'
-                        >
-                          <path d='M8 5v14l11-7z' />
-                        </svg>
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                <p className='text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3'>
-                  {project.description}
-                </p>
-
-                <div className='mt-auto'>
-                  <div className='flex flex-wrap gap-2 mb-4'>
-                    {project.technologies.slice(0, 4).map((tech, techIndex) => (
-                      <span
-                        key={tech}
-                        className='px-2.5 py-1 text-xs font-medium font-mono bg-white/5 text-gray-300 rounded-md border border-white/5'
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 4 && (
-                      <span className='px-2.5 py-1 text-xs font-medium bg-white/5 text-gray-400 rounded-md border border-white/5'>
-                        +{project.technologies.length - 4}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className='flex items-center justify-between pt-4 border-t border-white/5'>
-                    <span className='text-xs font-medium text-gray-500'>
-                      {project.company === 'Independent'
-                        ? 'Personal Project'
-                        : project.company || 'KodeFox'}
-                    </span>
-
-                    <div className='flex gap-3'>
-                      {project.publication && (
-                        <a
-                          href={project.publication}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='text-xs font-medium text-gray-400 hover:text-white transition-colors'
-                        >
-                          Read Article
-                        </a>
-                      )}
-                      {project.design && (
-                        <a
-                          href={project.design}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='text-xs font-medium text-gray-400 hover:text-white transition-colors'
-                        >
-                          View Design
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className='mt-16 text-left'>
-          <Link href='/projects'>
-            <a className='inline-flex items-center px-6 py-3 bg-white/5 text-white hover:bg-white/10 transition-all duration-300 font-medium rounded-full border border-white/10 hover:border-white/20 group'>
-              Explore All Projects
               <svg
-                className='ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform'
+                className='w-4 h-4'
                 fill='none'
                 stroke='currentColor'
                 viewBox='0 0 24 24'
@@ -267,11 +153,135 @@ export default function Projects() {
                   strokeLinecap='round'
                   strokeLinejoin='round'
                   strokeWidth={2}
-                  d='M17 8l4 4m0 0l-4 4m4-4H3'
+                  d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
                 />
               </svg>
             </a>
-          </Link>
+          )}
+        </div>
+
+        <p
+          className={`leading-relaxed ${
+            large
+              ? 'text-walnut text-base mb-6'
+              : 'text-walnut/80 text-sm line-clamp-3 mb-4'
+          }`}
+        >
+          {project.description}
+        </p>
+
+        <div className='mt-auto'>
+          {project.technologies.length > 0 && (
+            <div className='flex flex-wrap gap-1.5 mb-3'>
+              {project.technologies.slice(0, 4).map((tech) => (
+                <span
+                  key={tech}
+                  className='px-2 py-0.5 text-[11px] font-medium font-mono bg-cream text-stone rounded border border-sand/60'
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+
+          <div className='pt-3 border-t border-sand/60'>
+            <div className='flex items-center justify-between gap-3'>
+              <span className='text-[11px] font-medium text-stone uppercase tracking-wider shrink-0'>
+                {project.company === 'Independent'
+                  ? 'Personal'
+                  : project.company || 'KodeFox'}
+              </span>
+
+              {project.publication && (
+                <a
+                  href={project.publication}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium text-walnut bg-cream rounded-md border border-sand hover:border-terracotta/30 hover:text-terracotta transition-colors'
+                  aria-label={`Read article about ${project.name}`}
+                >
+                  <svg
+                    className='w-3 h-3'
+                    fill='none'
+                    stroke='currentColor'
+                    viewBox='0 0 24 24'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z'
+                    />
+                  </svg>
+                  Article
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Projects() {
+  const featured = projects.filter((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
+
+  return (
+    <div id='projects' className='relative'>
+      {/* Section divider */}
+      <div className='max-w-lg mx-auto lg:max-w-5xl px-4 sm:px-8'>
+        <div className='border-t border-sand' />
+      </div>
+
+      <div className='py-20 lg:py-28 px-4 sm:px-8'>
+        <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
+          <div className='mb-12'>
+            <h2 className='text-3xl sm:text-4xl tracking-tight font-normal font-display text-espresso mb-4 text-balance'>
+              Featured Projects
+            </h2>
+            <p className='text-walnut text-lg max-w-2xl lg:max-w-none leading-relaxed'>
+              Products I&apos;ve built or contributed to — from seed-stage
+              startups to Series A platforms.
+            </p>
+          </div>
+
+          {/* Featured projects — larger, side-by-side layout */}
+          <div className='grid gap-8 mb-12'>
+            {featured.map((project) => (
+              <ProjectCard key={project.name} project={project} large />
+            ))}
+          </div>
+
+          {/* Remaining projects — smaller grid */}
+          <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+            {rest.map((project) => (
+              <ProjectCard key={project.name} project={project} />
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className='mt-20 pt-10 border-t border-sand'>
+            <Link href='/projects'>
+              <a className='inline-flex items-center px-6 py-3 bg-espresso text-cream hover:bg-walnut transition-colors duration-300 font-medium rounded-full group text-sm tracking-wide'>
+                Explore All Projects
+                <svg
+                  className='ml-2.5 w-4 h-4 transform group-hover:translate-x-1 transition-transform'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M17 8l4 4m0 0l-4 4m4-4H3'
+                  />
+                </svg>
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

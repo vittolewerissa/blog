@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
-import { useEffect } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
@@ -13,6 +12,12 @@ const navigation = [
 export default function Navigation() {
   return (
     <Popover>
+      <a
+        href='#main-content'
+        className='sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-warm-white focus:px-3 focus:py-2 focus:text-sm focus:font-medium focus:text-espresso focus:ring-2 focus:ring-terracotta focus:ring-offset-2 focus:ring-offset-cream'
+      >
+        Skip to content
+      </a>
       <div className='pt-8 max-w-7xl mx-auto px-6 sm:px-6'>
         <nav
           className='flex items-center justify-between sm:h-10 lg:justify-center relative max-w-lg mx-auto lg:max-w-5xl'
@@ -21,12 +26,12 @@ export default function Navigation() {
           <div className='flex items-center flex-1 lg:absolute lg:inset-y-0 lg:left-0'>
             <div className='flex items-center justify-between w-full lg:w-auto'>
               <Link href='/' passHref>
-                <a className='tracking-wider uppercase font-bold text-sm lg:text-lg text-white'>
+                <a className='font-display text-base sm:text-lg lg:text-xl tracking-[0.02em] text-espresso hover:text-espresso/90 transition-colors'>
                   Vitto Lewerissa
                 </a>
               </Link>
               <div className='-mr-2 flex items-center lg:hidden'>
-                <Popover.Button className='p-2 inline-flex items-center justify-center text-gray-300 hover:text-sky-400 focus:outline-none rounded-md transition-colors'>
+                <Popover.Button className='p-2 inline-flex items-center justify-center text-stone hover:text-terracotta rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-cream'>
                   <span className='sr-only'>Open main menu</span>
                   <MenuIcon className='h-8 w-8' aria-hidden='true' />
                 </Popover.Button>
@@ -36,7 +41,7 @@ export default function Navigation() {
           <div className='hidden lg:flex lg:space-x-12'>
             {navigation.map((item) => (
               <Link key={item.name} href={item.href} passHref>
-                <a className='font-medium text-md text-white hover:text-gray-300'>
+                <a className='text-sm font-medium text-stone uppercase tracking-widest hover:text-espresso transition-colors'>
                   {item.name}
                 </a>
               </Link>
@@ -65,15 +70,15 @@ function MobileNavigation() {
         focus
         className='absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden'
       >
-        <div className='rounded-lg shadow-md bg-gray-800/95 backdrop-blur-sm ring-1 ring-gray-700 ring-opacity-50 overflow-hidden'>
+        <div className='rounded-lg shadow-md bg-warm-white ring-1 ring-sand overflow-hidden'>
           <div className='px-5 pt-4 flex items-center justify-between'>
             <div>
-              <span className='tracking-wider uppercase font-bold text-sm lg:text-lg text-white'>
+              <span className='font-display text-base tracking-[0.02em] text-espresso'>
                 Vitto Lewerissa
               </span>
             </div>
             <div className='-mr-2'>
-              <Popover.Button className='p-2 inline-flex items-center justify-center text-gray-300 hover:text-sky-400 focus:outline-none rounded-md transition-colors'>
+              <Popover.Button className='p-2 inline-flex items-center justify-center text-stone hover:text-terracotta rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-cream'>
                 <span className='sr-only'>Close menu</span>
                 <XIcon className='h-8 w-8' aria-hidden='true' />
               </Popover.Button>
@@ -83,7 +88,7 @@ function MobileNavigation() {
             {navigation.map((item) => (
               <Link key={item.name} href={item.href} passHref>
                 <a
-                  className='block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500'
+                  className='block px-3 py-2 rounded-md text-base font-medium text-walnut hover:text-espresso hover:bg-sand/30 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-cream'
                   onClick={() => {
                     // TODO: need to close drawer when we click a link
                   }}

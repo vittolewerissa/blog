@@ -18,93 +18,128 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 export default function WorkIndex({ companies }: Props) {
   return (
-    <div className='bg-gray-900 min-h-screen pt-0 pb-4 px-4 sm:px-6 lg:pt-0 lg:pb-20 lg:px-8'>
-      <div className='max-w-lg mx-auto lg:max-w-5xl py-12'>
-        <h1 className='text-3xl tracking-tight font-bold font-display text-white sm:text-4xl mb-4'>
-          Work Showcase
-        </h1>
-        <p className='text-gray-400 font-medium text-lg'>
-          A collection of articles about the projects and challenges I&apos;ve
-          worked on throughout my career. Each company represents a unique
-          chapter of learning and growth.
-        </p>
+    <div className='relative'>
+      <div
+        className='absolute inset-0 pointer-events-none'
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 45% at 65% 30%, rgba(139, 69, 87, 0.08) 0%, transparent 70%)',
+        }}
+      />
+
+      <div className='relative pb-16 lg:pb-24'>
+        <main
+          id='main-content'
+          className='mt-12 px-4 sm:px-8 sm:mt-20 lg:mt-24'
+        >
+          <div className='mx-auto max-w-lg lg:max-w-5xl'>
+            <div className='flex flex-col gap-6'>
+              <span className='inline-flex items-center gap-2 px-3 py-1.5 bg-warm-white rounded-full border border-sand text-[11px] font-mono text-stone tracking-[0.2em] uppercase w-fit'>
+                <span className='h-1.5 w-1.5 rounded-full bg-terracotta' />
+                Case Studies
+              </span>
+
+              <div>
+                <h1 className='text-4xl sm:text-5xl lg:text-6xl tracking-tight font-normal font-display text-espresso text-balance'>
+                  Work Showcase
+                </h1>
+                <p className='text-walnut mt-4 text-base sm:text-lg leading-relaxed max-w-2xl'>
+                  A collection of articles about the projects and challenges
+                  I&apos;ve worked on throughout my career. Each company
+                  represents a unique chapter of learning and growth.
+                </p>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
 
-      <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
-        <div className='space-y-6'>
-          {companies.map((company) => (
-            <Link key={company.id} href={`/work/${company.id}`}>
-              <a className='group block'>
-                <div className='relative p-6 rounded-2xl transition-all duration-300 bg-gray-900/40 backdrop-blur-sm hover:bg-gray-800/60 border border-white/10 hover:border-sky-500/50 hover:shadow-[0_0_30px_-10px_rgba(14,165,233,0.3)]'>
-                  <div className='flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8'>
-                    <div className='lg:w-48 flex-shrink-0'>
-                      <p className='text-sm font-medium font-mono text-gray-400 uppercase tracking-wider mb-3'>
-                        {company.period}
-                      </p>
+      <div className='max-w-lg mx-auto lg:max-w-5xl px-4 sm:px-8'>
+        <div className='border-t border-sand' />
+      </div>
 
-                      {/* Company logo */}
-                      {company.logo && (
-                        <div
-                          className={`w-12 h-12 rounded-xl overflow-hidden ${
-                            company.name === 'TipTip' ||
-                            company.name === 'Phantom Network'
-                              ? 'bg-transparent'
-                              : company.name === 'CHI'
-                              ? 'bg-black p-2.5'
-                              : 'bg-white p-2'
-                          }`}
-                        >
-                          <img
-                            src={company.logo}
-                            alt={`${company.displayName} logo`}
-                            className={`w-full h-full ${
+      <section className='py-16 lg:py-20 px-4 sm:px-8'>
+        <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
+          <div className='space-y-6'>
+            {companies.map((company) => (
+              <Link key={company.id} href={`/work/${company.id}`}>
+                <a className='group block'>
+                  <div className='relative rounded-2xl bg-warm-white border border-sand/80 hover:border-terracotta/30 transition-colors duration-200'>
+                    <div className='p-6 sm:p-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8'>
+                      <div className='sm:w-44 flex-shrink-0'>
+                        <p className='text-[11px] font-mono text-stone uppercase tracking-[0.2em] mb-3'>
+                          {company.period}
+                        </p>
+
+                        {company.logo && (
+                          <div
+                            className={`w-12 h-12 rounded-xl overflow-hidden border border-sand/60 ${
                               company.name === 'TipTip' ||
-                              company.name === 'Phantom Network' ||
-                              company.name === 'CHI'
-                                ? 'object-cover'
-                                : 'object-contain'
+                              company.name === 'Phantom Network'
+                                ? 'bg-transparent'
+                                : company.name === 'CHI'
+                                ? 'bg-black p-2.5'
+                                : 'bg-cream p-2'
                             }`}
-                          />
-                        </div>
-                      )}
-                    </div>
+                          >
+                            <img
+                              src={company.logo}
+                              alt={`${company.displayName} logo`}
+                              className={`w-full h-full ${
+                                company.name === 'TipTip' ||
+                                company.name === 'Phantom Network' ||
+                                company.name === 'CHI'
+                                  ? 'object-cover'
+                                  : 'object-contain'
+                              }`}
+                              width={48}
+                              height={48}
+                              loading='lazy'
+                            />
+                          </div>
+                        )}
+                      </div>
 
-                    <div className='flex-1'>
-                      <h3 className='text-2xl font-bold font-display text-white mb-2 group-hover:text-sky-400 transition-colors flex items-center'>
-                        {company.displayName}
-                        <svg
-                          className='ml-2 w-5 h-5 text-gray-500 group-hover:text-sky-400 transform group-hover:translate-x-1 transition-all'
-                          fill='none'
-                          stroke='currentColor'
-                          viewBox='0 0 24 24'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M17 8l4 4m0 0l-4 4m4-4H3'
-                          />
-                        </svg>
-                      </h3>
-                      <p className='text-gray-400 leading-relaxed'>
-                        {company.description}
-                      </p>
+                      <div className='flex-1'>
+                        <div className='flex items-center gap-2'>
+                          <h3 className='text-2xl sm:text-3xl font-semibold font-display text-espresso group-hover:text-terracotta transition-colors'>
+                            {company.displayName}
+                          </h3>
+                          <svg
+                            className='w-5 h-5 text-stone/70 group-hover:text-terracotta transform group-hover:translate-x-1 transition-transform transition-colors'
+                            fill='none'
+                            stroke='currentColor'
+                            viewBox='0 0 24 24'
+                            aria-hidden='true'
+                          >
+                            <path
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              strokeWidth={1.5}
+                              d='M17 8l4 4m0 0l-4 4m4-4H3'
+                            />
+                          </svg>
+                        </div>
+                        <p className='text-walnut leading-relaxed mt-2'>
+                          {company.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </a>
-            </Link>
-          ))}
-        </div>
-
-        {companies.length === 0 && (
-          <div className='text-center py-12'>
-            <p className='text-gray-400 text-lg'>
-              No case studies available yet. Check back soon!
-            </p>
+                </a>
+              </Link>
+            ))}
           </div>
-        )}
-      </div>
+
+          {companies.length === 0 && (
+            <div className='text-center py-12'>
+              <p className='text-walnut text-lg'>
+                No case studies available yet. Check back soon!
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
     </div>
   );
 }

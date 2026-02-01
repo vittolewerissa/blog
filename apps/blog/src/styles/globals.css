@@ -1,14 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;400;500;600;700;1,9..144,300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --color-cream: #FAF7F2;
+  --color-warm-white: #F5F0E8;
+  --color-sand: #E8E0D4;
+  --color-stone: #B8AFA5;
+  --color-walnut: #6B5E53;
+  --color-espresso: #2C2420;
+  --color-terracotta: #8B4557;
+  --color-terracotta-light: #A86273;
+}
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  @apply bg-gray-900 text-white;
+  @apply bg-cream text-espresso;
 }
 
 a {
@@ -22,11 +48,15 @@ a {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.text-balance {
+  text-wrap: balance;
+}
+
 .wave {
-  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.5s; /* Change to speed up or slow down */
-  animation-iteration-count: infinite; /* Never stop waving :) */
-  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
   display: inline-block;
 }
 
@@ -36,7 +66,7 @@ a {
   }
   10% {
     transform: rotate(14deg);
-  } /* The following five values can be played with to make the waving more or less extreme */
+  }
   20% {
     transform: rotate(-8deg);
   }
@@ -51,7 +81,7 @@ a {
   }
   60% {
     transform: rotate(0deg);
-  } /* Reset for the last half to pause */
+  }
   100% {
     transform: rotate(0deg);
   }
@@ -64,8 +94,8 @@ a {
 
 @-webkit-keyframes fade-in-fwd {
   0% {
-    -webkit-transform: translateZ(-80px);
-    transform: translateZ(-80px);
+    -webkit-transform: translateZ(-30px);
+    transform: translateZ(-30px);
     opacity: 0;
   }
   100% {
@@ -76,8 +106,8 @@ a {
 }
 @keyframes fade-in-fwd {
   0% {
-    -webkit-transform: translateZ(-80px);
-    transform: translateZ(-80px);
+    -webkit-transform: translateZ(-30px);
+    transform: translateZ(-30px);
     opacity: 0;
   }
   100% {
@@ -88,21 +118,21 @@ a {
 }
 
 .slide-in-bottom {
-  -webkit-animation: slide-in-bottom 0.5s 0.1s
+  -webkit-animation: slide-in-bottom 0.6s 0.1s
     cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-in-bottom 0.5s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-bottom 0.6s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .slide-in-bottom-2 {
-  -webkit-animation: slide-in-bottom 0.5s 0.3s
+  -webkit-animation: slide-in-bottom 0.6s 0.3s
     cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-in-bottom 0.5s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-bottom 0.6s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes slide-in-bottom {
   0% {
-    -webkit-transform: translateY(50px);
-    transform: translateY(50px);
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
     opacity: 0;
   }
   100% {
@@ -113,8 +143,8 @@ a {
 }
 @keyframes slide-in-bottom {
   0% {
-    -webkit-transform: translateY(50px);
-    transform: translateY(50px);
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
     opacity: 0;
   }
   100% {
@@ -125,15 +155,15 @@ a {
 }
 
 .puff-in-center {
-  -webkit-animation: puff-in-center 0.7s 0.2s
+  -webkit-animation: puff-in-center 0.8s 0.2s
     cubic-bezier(0.47, 0, 0.745, 0.715) both;
-  animation: puff-in-center 0.7s 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: puff-in-center 0.8s 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 }
 
 @-webkit-keyframes puff-in-center {
   0% {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
     opacity: 0;
   }
   100% {
@@ -144,8 +174,8 @@ a {
 }
 @keyframes puff-in-center {
   0% {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
     opacity: 0;
   }
   100% {
@@ -155,41 +185,19 @@ a {
   }
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Global cursor-following glow effect */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: radial-gradient(
-    circle 600px at var(--global-mouse-x, 50%) var(--global-mouse-y, 50%),
-    rgba(14, 165, 233, 0.05) 0%,
-    rgba(14, 165, 233, 0.025) 40%,
-    transparent 80%
-  );
-  pointer-events: none;
-  z-index: 1;
-  opacity: 1;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Subtle paper grain texture */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}

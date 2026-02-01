@@ -16,8 +16,8 @@ type PreProps = {
   children: React.ReactNode;
 };
 
-const CODE_ADDED_COLOR = '#043E2F';
-const CODE_REMOVED_COLOR = '#831843';
+const CODE_ADDED_COLOR = '#DFF3E8';
+const CODE_REMOVED_COLOR = '#F7E1E1';
 
 const Code = (props: Props) => {
   const match = /language-(\w+)/.exec(props.className || '');
@@ -28,15 +28,15 @@ const Code = (props: Props) => {
       style={highlightStyle}
       PreTag={function Pre({ children }: PreProps) {
         return (
-          <div className='bg-neutral-900 pb-4 text-md font-medium border border-zinc-600 rounded-lg'>
+          <div className='bg-warm-white pb-4 text-md font-medium border border-sand/70 rounded-xl'>
             {props.filename && (
-              <div className='bg-zinc-800 mb-5 flex rounded-t-lg'>
-                <div className='pt-3 px-4 pb-1 text-base font-medium text-gray-300 border-b border-zinc-400'>
+              <div className='bg-cream mb-5 flex rounded-t-xl border-b border-sand/70'>
+                <div className='pt-3 px-4 pb-1 text-base font-medium text-walnut'>
                   <span className='font-sans text-sm lg:text-base'>
                     {props.filename}
                   </span>
                 </div>
-                <div className='flex-1 h-8 self-end bg-zinc-700 rounded-tl-sm border border-r-0 border-zinc-600' />
+                <div className='flex-1 h-8 self-end bg-warm-white rounded-tl-sm border border-r-0 border-sand/70' />
               </div>
             )}
             <div>{children}</div>
