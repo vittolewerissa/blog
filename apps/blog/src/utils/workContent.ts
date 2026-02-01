@@ -39,34 +39,37 @@ function parseStartDate(period: string): Date {
  * Get all companies that have work articles
  */
 export function getAllCompanies(): Company[] {
+  let companyIds: string[] = [];
+
   try {
     const companies = fs.readdirSync(workDirectory);
-
-    return companies
-      .filter((company) => {
-        const companyPath = path.join(workDirectory, company);
-        return fs.statSync(companyPath).isDirectory();
-      })
-      .map((companyId) => ({
-        id: companyId,
-        ...(companyMetadata[companyId] || {
-          name: companyId,
-          displayName: companyId,
-          logo: '',
-          period: '',
-          description: '',
-          role: '',
-        }),
-      }))
-      .sort((a, b) => {
-        // Sort by start date (most recent first)
-        const dateA = parseStartDate(a.period);
-        const dateB = parseStartDate(b.period);
-        return dateB.getTime() - dateA.getTime();
-      });
+    companyIds = companies.filter((company) => {
+      const companyPath = path.join(workDirectory, company);
+      return fs.statSync(companyPath).isDirectory();
+    });
   } catch (error) {
-    return [];
+    // Fallback for environments where the content directory isn't available at runtime.
+    companyIds = Object.keys(companyMetadata);
   }
+
+  return companyIds
+    .map((companyId) => ({
+      id: companyId,
+      ...(companyMetadata[companyId] || {
+        name: companyId,
+        displayName: companyId,
+        logo: '',
+        period: '',
+        description: '',
+        role: '',
+      }),
+    }))
+    .sort((a, b) => {
+      // Sort by start date (most recent first)
+      const dateA = parseStartDate(a.period);
+      const dateB = parseStartDate(b.period);
+      return dateB.getTime() - dateA.getTime();
+    });
 }
 
 /**
