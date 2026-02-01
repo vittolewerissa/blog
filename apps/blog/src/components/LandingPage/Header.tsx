@@ -22,12 +22,12 @@ export default function Header() {
           <div className='mx-auto max-w-lg lg:max-w-5xl flex flex-col lg:flex-row lg:items-center'>
             <div className='order-last lg:order-first max-w-lg'>
               <h1 className='text-5xl sm:text-6xl lg:text-8xl tracking-tight font-normal font-display text-espresso text-balance'>
-                <span className='block leading-[1.1] slide-in-bottom'>
-                  <span className='wave mr-2'>👋🏼</span> Hi, I&apos;m{' '}
-                  <span className='text-terracotta italic'>Vitto</span>.
+                <span className='block leading-[1.05] slide-in-bottom'>
+                  <span className='wave mr-2 inline-block align-[-6%] text-[0.85em]'>👋🏼</span> Hi, I&apos;m{' '}
+                  <span className='text-terracotta italic font-medium'>Vitto</span>.
                 </span>
               </h1>
-              <p className='text-walnut mt-5 md:mt-7 text-md md:text-lg leading-relaxed max-w-md slide-in-bottom-2'>
+              <p className='text-walnut/90 mt-6 md:mt-8 text-base sm:text-lg leading-relaxed max-w-lg slide-in-bottom-2'>
                 Full-stack engineer building products at scale — from
                 event platforms serving millions of users to enterprise
                 apps across fintech and construction.
@@ -56,14 +56,14 @@ export default function Header() {
                       d='M15 11a3 3 0 11-6 0 3 3 0 016 0z'
                     />
                   </svg>
-                  <span className='text-walnut text-sm font-medium'>
+                  <span className='text-walnut text-[15px] font-medium'>
                     Bali, Indonesia
                   </span>
                 </div>
 
                 <div className='w-px h-5 bg-sand' />
 
-                <div className='flex items-center gap-1'>
+                <div className='flex items-center gap-1.5'>
                   <a
                     href='https://github.com/vittolewerissa'
                     target='_blank'
@@ -144,7 +144,7 @@ export default function Header() {
             </div>
 
             <div className='relative mt-6 mb-8 ml-4 sm:mr-8 self-start lg:mt-0 md:ml-12 md:mt-0 shrink-0 puff-in-center lg:-mr-8'>
-              <div className='w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-[22rem] lg:h-[22rem] relative rounded-2xl overflow-hidden shadow-xl shadow-espresso/10'>
+              <div className='w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-[22rem] lg:h-[22rem] relative rounded-2xl overflow-hidden shadow-lg shadow-espresso/10'>
                 <Image
                   src='/profile-picture.jpg'
                   alt='Vitto Lewerissa'

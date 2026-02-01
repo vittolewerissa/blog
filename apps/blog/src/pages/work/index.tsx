@@ -35,7 +35,7 @@ export default function WorkIndex({ companies }: Props) {
         >
           <div className='mx-auto max-w-lg lg:max-w-5xl'>
             <div className='flex flex-col gap-6'>
-              <span className='inline-flex items-center gap-2 px-3 py-1.5 bg-warm-white rounded-full border border-sand text-[11px] font-mono text-stone tracking-[0.2em] uppercase w-fit'>
+              <span className='inline-flex items-center gap-2 px-3 py-1.5 bg-warm-white rounded-full border border-sand text-[11px] font-mono text-walnut/70 tracking-[0.2em] uppercase w-fit'>
                 <span className='h-1.5 w-1.5 rounded-full bg-terracotta' />
                 Case Studies
               </span>
@@ -67,8 +67,8 @@ export default function WorkIndex({ companies }: Props) {
                 <a className='group block'>
                   <div className='relative rounded-2xl bg-warm-white border border-sand/80 hover:border-terracotta/30 transition-colors duration-200'>
                     <div className='p-6 sm:p-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8'>
-                      <div className='sm:w-44 flex-shrink-0'>
-                        <p className='text-[11px] font-mono text-stone uppercase tracking-[0.2em] mb-3'>
+                      <div className='sm:w-52 lg:w-56 flex-shrink-0'>
+                        <p className='text-[12px] font-mono text-walnut/70 uppercase tracking-[0.16em] mb-3 whitespace-nowrap tabular-nums'>
                           {company.period}
                         </p>
 
@@ -119,7 +119,7 @@ export default function WorkIndex({ companies }: Props) {
                             />
                           </svg>
                         </div>
-                        <p className='text-walnut leading-relaxed mt-2'>
+                        <p className='text-walnut/90 leading-relaxed mt-2'>
                           {company.description}
                         </p>
                       </div>

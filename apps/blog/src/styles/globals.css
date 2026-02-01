@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;400;500;600;700;1,9..144,300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap');
 
 :root {
-  --color-cream: #FAF7F2;
-  --color-warm-white: #F5F0E8;
-  --color-sand: #E8E0D4;
-  --color-stone: #B8AFA5;
-  --color-walnut: #6B5E53;
-  --color-espresso: #2C2420;
-  --color-terracotta: #8B4557;
-  --color-terracotta-light: #A86273;
+  --color-cream: #faf7f2;
+  --color-warm-white: #f5f0e8;
+  --color-sand: #e8e0d4;
+  --color-stone: #b8afa5;
+  --color-walnut: #6b5e53;
+  --color-espresso: #2c2420;
+  --color-terracotta: #8b4557;
+  --color-terracotta-light: #a86273;
 }
 
 html {

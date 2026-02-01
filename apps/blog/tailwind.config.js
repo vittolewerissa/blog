@@ -7,6 +7,7 @@ module.exports = {
       fontFamily: {
         sans: ['Outfit', ...defaultTheme.fontFamily.sans],
         display: ['Fraunces', 'Georgia', ...defaultTheme.fontFamily.serif],
+        logo: ['"Cormorant Garamond"', 'Georgia', ...defaultTheme.fontFamily.serif],
         mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
       },
       colors: {

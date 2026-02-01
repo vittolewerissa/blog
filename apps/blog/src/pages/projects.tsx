@@ -73,7 +73,7 @@ export default function Projects() {
       <section className='relative pb-12 lg:pb-16'>
         <div className='mt-12 px-4 sm:px-8 sm:mt-20 lg:mt-24'>
           <div className='mx-auto max-w-lg lg:max-w-5xl'>
-            <span className='inline-flex items-center gap-2 px-3 py-1.5 bg-warm-white rounded-full border border-sand text-[11px] font-mono text-stone tracking-[0.2em] uppercase w-fit'>
+            <span className='inline-flex items-center gap-2 px-3 py-1.5 bg-warm-white rounded-full border border-sand text-[11px] font-mono text-walnut/70 tracking-[0.2em] uppercase w-fit'>
               <span className='h-1.5 w-1.5 rounded-full bg-terracotta' />
               Archive
             </span>
@@ -101,19 +101,19 @@ export default function Projects() {
             <table className='w-full text-left border-collapse'>
               <thead>
                 <tr className='border-b border-sand/70 bg-warm-white/80'>
-                  <th className='py-4 pr-6 pl-6 text-espresso font-medium text-[11px] font-mono uppercase tracking-[0.2em]'>
+                  <th className='py-4 pr-6 pl-6 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em]'>
                     Year
                   </th>
-                  <th className='py-4 px-4 text-espresso font-medium text-[11px] font-mono uppercase tracking-[0.2em]'>
+                  <th className='py-4 px-4 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em]'>
                     Project
                   </th>
-                  <th className='py-4 px-4 text-espresso font-medium text-[11px] font-mono uppercase tracking-[0.2em] hidden md:table-cell'>
+                  <th className='py-4 px-4 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em] hidden md:table-cell'>
                     Made at
                   </th>
-                  <th className='py-4 px-4 text-espresso font-medium text-[11px] font-mono uppercase tracking-[0.2em] hidden lg:table-cell'>
+                  <th className='py-4 px-4 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em] hidden lg:table-cell'>
                     Built with
                   </th>
-                  <th className='py-4 pl-4 pr-6 text-espresso font-medium text-[11px] font-mono uppercase tracking-[0.2em]'>
+                  <th className='py-4 pl-4 pr-6 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em]'>
                     Link
                   </th>
                 </tr>
@@ -124,7 +124,7 @@ export default function Projects() {
                     key={index}
                     className='border-b border-sand/60 hover:bg-warm-white/70 transition-colors group'
                   >
-                    <td className='py-5 pr-6 pl-6 text-walnut text-sm font-mono'>
+                    <td className='py-5 pr-6 pl-6 text-walnut text-sm font-mono tabular-nums'>
                       {project.year}
                     </td>
                     <td className='py-5 px-4 text-espresso font-semibold font-display text-lg group-hover:text-terracotta transition-colors'>

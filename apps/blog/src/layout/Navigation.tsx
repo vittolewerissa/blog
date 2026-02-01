@@ -26,7 +26,7 @@ export default function Navigation() {
           <div className='flex items-center flex-1 lg:absolute lg:inset-y-0 lg:left-0'>
             <div className='flex items-center justify-between w-full lg:w-auto'>
               <Link href='/' passHref>
-                <a className='font-display text-base sm:text-lg lg:text-xl tracking-[0.02em] text-espresso hover:text-espresso/90 transition-colors'>
+                <a className='font-logo text-lg sm:text-xl lg:text-xl tracking-[0.02em] font-medium text-espresso hover:text-espresso/90 transition-colors'>
                   Vitto Lewerissa
                 </a>
               </Link>
@@ -41,7 +41,7 @@ export default function Navigation() {
           <div className='hidden lg:flex lg:space-x-12'>
             {navigation.map((item) => (
               <Link key={item.name} href={item.href} passHref>
-                <a className='text-sm font-medium text-stone uppercase tracking-widest hover:text-espresso transition-colors'>
+                <a className='text-sm font-medium text-walnut uppercase tracking-[0.18em] hover:text-espresso transition-colors'>
                   {item.name}
                 </a>
               </Link>
@@ -73,7 +73,7 @@ function MobileNavigation() {
         <div className='rounded-lg shadow-md bg-warm-white ring-1 ring-sand overflow-hidden'>
           <div className='px-5 pt-4 flex items-center justify-between'>
             <div>
-              <span className='font-display text-base tracking-[0.02em] text-espresso'>
+              <span className='font-logo text-lg tracking-[0.02em] font-medium text-espresso'>
                 Vitto Lewerissa
               </span>
             </div>

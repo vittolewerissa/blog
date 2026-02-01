@@ -52,12 +52,12 @@ export default function Footer() {
       <h2 id='footer-heading' className='sr-only'>
         Footer
       </h2>
-      <div className='mt-8 p-8 border-t border-sand'>
+      <div className='mt-8 p-8 border-t border-sand/70'>
         <div className='max-w-lg mx-auto lg:max-w-5xl'>
-          <div className='flex flex-col lg:flex-row lg:justify-between lg:items-start space-y-4 lg:space-y-0'>
-            <div className='flex flex-col space-y-4'>
+          <div className='flex flex-col lg:flex-row lg:justify-between lg:items-start space-y-3 lg:space-y-0'>
+            <div className='flex flex-col space-y-3'>
               <div>
-                <h3 className='font-display text-base lg:text-lg tracking-[0.02em] text-espresso'>
+                <h3 className='font-logo text-lg lg:text-xl tracking-[0.02em] font-medium text-espresso'>
                   Vitto Lewerissa
                 </h3>
               </div>
@@ -72,7 +72,7 @@ export default function Footer() {
                         ? undefined
                         : 'noopener noreferrer'
                     }
-                    className='p-2 text-stone hover:text-espresso transition-colors duration-200'
+                    className='p-2 text-walnut/80 hover:text-espresso transition-colors duration-200'
                     aria-label={item.name}
                   >
                     <item.icon className='h-6 w-6' />
@@ -80,12 +80,12 @@ export default function Footer() {
                 ))}
               </div>
               <div>
-                <p className='text-base text-stone'>
+                <p className='text-[15px] text-walnut/80'>
                   Copyright &copy; 2025. All rights reserved.
                 </p>
               </div>
             </div>
-            <div className='text-sm text-stone flex items-center gap-1'>
+            <div className='text-[13px] text-walnut/70 flex items-center gap-1'>
               Built with
               <svg
                 className='h-3.5 w-3.5 text-terracotta'

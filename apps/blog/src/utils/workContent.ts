@@ -24,6 +24,7 @@ export type Company = {
   logo: string;
   period: string;
   description: string;
+  role?: string;
 };
 
 /**
@@ -54,6 +55,7 @@ export function getAllCompanies(): Company[] {
           logo: '',
           period: '',
           description: '',
+          role: '',
         }),
       }))
       .sort((a, b) => {

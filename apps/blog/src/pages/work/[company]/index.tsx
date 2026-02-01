@@ -127,12 +127,17 @@ export default function CompanyWork({ company, articles }: Props) {
                 <h1 className='text-3xl sm:text-4xl tracking-tight font-normal font-display text-espresso text-balance'>
                   {company.displayName}
                 </h1>
-                <p className='text-[11px] font-mono text-stone uppercase tracking-[0.2em] mt-3'>
+                <p className='text-[12px] font-mono text-walnut/70 uppercase tracking-[0.16em] mt-3 whitespace-nowrap tabular-nums'>
                   {company.period}
                 </p>
-                <p className='text-walnut mt-4 text-base sm:text-lg leading-relaxed max-w-2xl'>
+                <p className='text-walnut/90 mt-4 text-base sm:text-lg leading-relaxed max-w-2xl'>
                   {company.description}
                 </p>
+                {company.role && (
+                  <p className='text-walnut/90 mt-3 text-base sm:text-lg leading-relaxed max-w-2xl'>
+                    {company.role}
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -149,7 +154,7 @@ export default function CompanyWork({ company, articles }: Props) {
             <h2 className='text-2xl sm:text-3xl tracking-tight font-normal font-display text-espresso text-balance'>
               Case Studies
             </h2>
-            <span className='hidden sm:block text-sm text-stone font-mono'>
+            <span className='hidden sm:block text-[12px] text-walnut/70 font-mono uppercase tracking-[0.12em] tabular-nums'>
               {articles.length} entries
             </span>
           </div>
@@ -171,13 +176,13 @@ export default function CompanyWork({ company, articles }: Props) {
                 return (
                   <Link key={article.slug} href={href} passHref>
                     <a className='group block rounded-2xl bg-warm-white border border-sand/80 hover:border-terracotta/30 transition-colors duration-200 p-6 sm:p-7'>
-                      <p className='text-[11px] font-mono text-stone uppercase tracking-[0.2em]'>
+                      <p className='text-[12px] font-mono text-walnut/70 uppercase tracking-[0.16em] tabular-nums'>
                         <time dateTime={article.date}>{dateString}</time>
                       </p>
-                      <h3 className='mt-3 text-xl sm:text-2xl font-display font-semibold text-espresso group-hover:text-terracotta transition-colors'>
+                      <h3 className='mt-3 text-xl sm:text-2xl font-display font-semibold text-espresso text-balance group-hover:text-terracotta transition-colors'>
                         {article.title}
                       </h3>
-                      <p className='mt-2 text-walnut/80 leading-relaxed line-clamp-3'>
+                      <p className='mt-2 text-walnut/90 leading-relaxed line-clamp-3'>
                         {article.description}
                       </p>
                       <div className='mt-6 flex items-center justify-between text-sm text-stone'>
@@ -198,7 +203,7 @@ export default function CompanyWork({ company, articles }: Props) {
                             />
                           </svg>
                         </span>
-                        <span className='text-[11px] font-mono text-stone'>
+                        <span className='text-[12px] font-mono text-walnut/70 tabular-nums'>
                           {article.readingTime.text}
                         </span>
                       </div>

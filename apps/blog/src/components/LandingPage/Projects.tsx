@@ -83,8 +83,10 @@ function ProjectCard({
 
   return (
     <div
-      className={`group relative flex flex-col bg-warm-white rounded-2xl overflow-hidden transition-colors transition-shadow transition-transform duration-300 ring-1 ring-sand hover:ring-terracotta/30 hover:shadow-lg hover:shadow-espresso/5 ${
-        large ? 'lg:flex-row' : 'hover:-translate-y-0.5'
+      className={`group relative flex flex-col bg-warm-white rounded-2xl overflow-hidden transition-colors transition-shadow transition-transform duration-300 ring-1 ring-sand hover:ring-terracotta/30 ${
+        large
+          ? 'lg:flex-row hover:shadow-lg hover:shadow-espresso/5'
+          : 'hover:-translate-y-0.5 hover:shadow-md hover:shadow-espresso/5'
       }`}
     >
       {/* Project Image */}
@@ -128,8 +130,8 @@ function ProjectCard({
       >
         <div className='flex items-center justify-between mb-2'>
           <h3
-            className={`font-bold font-display text-espresso group-hover:text-terracotta transition-colors ${
-              large ? 'text-2xl lg:text-3xl' : 'text-lg'
+            className={`font-bold font-display text-espresso text-balance group-hover:text-terracotta transition-colors ${
+              large ? 'text-[26px] lg:text-[32px]' : 'text-[19px]'
             }`}
           >
             {project.name}
@@ -163,8 +165,8 @@ function ProjectCard({
         <p
           className={`leading-relaxed ${
             large
-              ? 'text-walnut text-base mb-6'
-              : 'text-walnut/80 text-sm line-clamp-3 mb-4'
+              ? 'text-walnut text-base leading-[1.7] mb-6'
+              : 'text-walnut/90 text-[15px] line-clamp-3 mb-4'
           }`}
         >
           {project.description}
@@ -172,11 +174,11 @@ function ProjectCard({
 
         <div className='mt-auto'>
           {project.technologies.length > 0 && (
-            <div className='flex flex-wrap gap-1.5 mb-3'>
+            <div className='flex flex-wrap gap-1.5 mb-3 mt-1'>
               {project.technologies.slice(0, 4).map((tech) => (
                 <span
                   key={tech}
-                  className='px-2 py-0.5 text-[11px] font-medium font-mono bg-cream text-stone rounded border border-sand/60'
+                  className='px-2 py-0.5 text-[12px] font-medium font-mono bg-cream text-stone rounded border border-sand/60'
                 >
                   {tech}
                 </span>
@@ -186,7 +188,7 @@ function ProjectCard({
 
           <div className='pt-3 border-t border-sand/60'>
             <div className='flex items-center justify-between gap-3'>
-              <span className='text-[11px] font-medium text-stone uppercase tracking-wider shrink-0'>
+              <span className='text-[12px] font-medium text-stone uppercase tracking-[0.12em] shrink-0'>
                 {project.company === 'Independent'
                   ? 'Personal'
                   : project.company || 'KodeFox'}
@@ -197,7 +199,7 @@ function ProjectCard({
                   href={project.publication}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium text-walnut bg-cream rounded-md border border-sand hover:border-terracotta/30 hover:text-terracotta transition-colors'
+                  className='inline-flex items-center gap-1.5 px-2.5 py-1 text-[12px] font-medium text-walnut bg-cream rounded-md border border-sand hover:border-terracotta/30 hover:text-terracotta transition-colors'
                   aria-label={`Read article about ${project.name}`}
                 >
                   <svg
@@ -262,9 +264,9 @@ export default function Projects() {
           </div>
 
           {/* CTA */}
-          <div className='mt-20 pt-10 border-t border-sand'>
+          <div className='mt-20 pt-10 border-t border-sand/60'>
             <Link href='/projects'>
-              <a className='inline-flex items-center px-6 py-3 bg-espresso text-cream hover:bg-walnut transition-colors duration-300 font-medium rounded-full group text-sm tracking-wide'>
+              <a className='inline-flex items-center px-6 py-3 bg-espresso text-cream hover:bg-walnut transition-colors duration-300 font-medium rounded-full group text-sm tracking-[0.08em]'>
                 Explore All Projects
                 <svg
                   className='ml-2.5 w-4 h-4 transform group-hover:translate-x-1 transition-transform'
