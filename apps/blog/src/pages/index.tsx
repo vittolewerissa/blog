@@ -1,7 +1,6 @@
 import Head from '../layout/Head';
 import Header from '../components/LandingPage/Header';
 import FeaturedWork from '../components/LandingPage/FeaturedWork';
-import Projects from '../components/LandingPage/Projects';
 import Footer from '../layout/Footer';
 
 const Home = () => {
@@ -10,7 +9,6 @@ const Home = () => {
       <Head />
       <Header />
       <FeaturedWork />
-      <Projects />
       <Footer />
     </div>
   );

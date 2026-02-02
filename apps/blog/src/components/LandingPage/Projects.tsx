@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const projects = [
   {
@@ -82,11 +81,11 @@ function ProjectCard({
     : '(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw';
 
   return (
-    <div
-      className={`group relative flex flex-col bg-warm-white rounded-2xl overflow-hidden transition-colors transition-shadow transition-transform duration-300 ring-1 ring-sand hover:ring-terracotta/30 ${
+    <article
+      className={`group relative flex flex-col rounded-2xl overflow-hidden bg-warm-white transition-colors transition-shadow duration-300 ring-1 ring-sand hover:ring-terracotta/20 focus-within:ring-terracotta/30 focus-within:ring-2 ${
         large
-          ? 'lg:flex-row hover:shadow-lg hover:shadow-espresso/5'
-          : 'hover:-translate-y-0.5 hover:shadow-md hover:shadow-espresso/5'
+          ? 'lg:flex-row hover:shadow-md hover:shadow-espresso/5'
+          : 'hover:shadow-sm hover:shadow-espresso/5'
       }`}
     >
       {/* Project Image */}
@@ -113,13 +112,7 @@ function ProjectCard({
           />
         )}
 
-        <div className='absolute top-3 right-3 flex gap-2'>
-          {project.status === 'archived' && (
-            <span className='px-2.5 py-1 text-xs font-medium bg-espresso/60 backdrop-blur-md text-cream rounded-full border border-sand'>
-              Archived
-            </span>
-          )}
-        </div>
+        <div className='absolute inset-0 bg-gradient-to-t from-espresso/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
       </div>
 
       {/* Project Info */}
@@ -128,7 +121,7 @@ function ProjectCard({
           large ? 'p-6 lg:p-10' : 'p-5'
         }`}
       >
-        <div className='flex items-center justify-between mb-2'>
+        <div className='flex items-start justify-between mb-2 gap-3'>
           <h3
             className={`font-bold font-display text-espresso text-balance group-hover:text-terracotta transition-colors ${
               large ? 'text-[26px] lg:text-[32px]' : 'text-[19px]'
@@ -136,30 +129,9 @@ function ProjectCard({
           >
             {project.name}
           </h3>
-          {project.demo && (
-            <a
-              href={project.demo}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='p-1.5 text-stone hover:text-espresso hover:bg-sand/50 rounded-full transition-colors flex-shrink-0'
-              title='Visit Website'
-              aria-label={`Visit ${project.name} website`}
-            >
-              <svg
-                className='w-4 h-4'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
-                />
-              </svg>
-            </a>
-          )}
+          <span className='text-[11px] font-mono text-walnut/70 uppercase tracking-[0.12em] shrink-0'>
+            {project.company}
+          </span>
         </div>
 
         <p
@@ -175,7 +147,7 @@ function ProjectCard({
         <div className='mt-auto'>
           {project.technologies.length > 0 && (
             <div className='flex flex-wrap gap-1.5 mb-3 mt-1'>
-              {project.technologies.slice(0, 4).map((tech) => (
+              {project.technologies.slice(0, large ? 5 : 4).map((tech) => (
                 <span
                   key={tech}
                   className='px-2 py-0.5 text-[12px] font-medium font-mono bg-cream text-stone rounded border border-sand/60'
@@ -188,41 +160,67 @@ function ProjectCard({
 
           <div className='pt-3 border-t border-sand/60'>
             <div className='flex items-center justify-between gap-3'>
-              <span className='text-[12px] font-medium text-stone uppercase tracking-[0.12em] shrink-0'>
-                {project.company === 'Independent'
-                  ? 'Personal'
-                  : project.company || 'KodeFox'}
+              <span className='text-[11px] font-mono text-walnut/70 uppercase tracking-[0.12em] shrink-0'>
+                {project.status}
               </span>
 
-              {project.publication && (
-                <a
-                  href={project.publication}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='inline-flex items-center gap-1.5 px-2.5 py-1 text-[12px] font-medium text-walnut bg-cream rounded-md border border-sand hover:border-terracotta/30 hover:text-terracotta transition-colors'
-                  aria-label={`Read article about ${project.name}`}
-                >
-                  <svg
-                    className='w-3 h-3'
-                    fill='none'
-                    stroke='currentColor'
-                    viewBox='0 0 24 24'
+              <div className='flex items-center gap-2'>
+                {project.publication && (
+                  <a
+                    href={project.publication}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='inline-flex min-h-11 items-center gap-1.5 px-3 py-1 text-[12px] font-medium text-walnut bg-cream rounded-md border border-sand hover:border-terracotta/30 hover:text-terracotta transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-warm-white'
+                    aria-label={`Read article about ${project.name}`}
                   >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z'
-                    />
-                  </svg>
-                  Article
-                </a>
-              )}
+                    <svg
+                      className='w-3 h-3'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                      aria-hidden='true'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z'
+                      />
+                    </svg>
+                    Read
+                  </a>
+                )}
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='inline-flex min-h-11 items-center gap-1.5 px-3 py-1 text-[12px] font-medium text-walnut bg-cream rounded-md border border-sand hover:border-terracotta/30 hover:text-terracotta transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-warm-white'
+                    aria-label={`Visit ${project.name} website`}
+                  >
+                    Visit
+                    <svg
+                      className='w-3 h-3'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                      aria-hidden='true'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+                      />
+                    </svg>
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -231,7 +229,7 @@ export default function Projects() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <div id='projects' className='relative'>
+    <section id='projects' className='relative' aria-labelledby='featured-projects-title'>
       {/* Section divider */}
       <div className='max-w-lg mx-auto lg:max-w-5xl px-4 sm:px-8'>
         <div className='border-t border-sand' />
@@ -239,14 +237,13 @@ export default function Projects() {
 
       <div className='py-20 lg:py-28 px-4 sm:px-8'>
         <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
-          <div className='mb-12'>
-            <h2 className='text-3xl sm:text-4xl tracking-tight font-normal font-display text-espresso mb-4 text-balance'>
+          <div className='mb-10 lg:mb-12'>
+            <h2
+              id='featured-projects-title'
+              className='text-3xl sm:text-4xl lg:text-5xl tracking-tight font-normal font-display text-espresso text-balance'
+            >
               Featured Projects
             </h2>
-            <p className='text-walnut text-lg max-w-2xl lg:max-w-none leading-relaxed'>
-              Products I&apos;ve built or contributed to — from seed-stage
-              startups to Series A platforms.
-            </p>
           </div>
 
           {/* Featured projects — larger, side-by-side layout */}
@@ -257,35 +254,18 @@ export default function Projects() {
           </div>
 
           {/* Remaining projects — smaller grid */}
-          <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+          <div className='mb-5'>
+            <h3 className='text-xl sm:text-2xl font-display text-espresso'>
+              More Projects
+            </h3>
+          </div>
+          <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-2'>
             {rest.map((project) => (
               <ProjectCard key={project.name} project={project} />
             ))}
           </div>
-
-          {/* CTA */}
-          <div className='mt-20 pt-10 border-t border-sand/60'>
-            <Link href='/projects'>
-              <a className='inline-flex items-center px-6 py-3 bg-espresso text-cream hover:bg-walnut transition-colors duration-300 font-medium rounded-full group text-sm tracking-[0.08em]'>
-                Explore All Projects
-                <svg
-                  className='ml-2.5 w-4 h-4 transform group-hover:translate-x-1 transition-transform'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M17 8l4 4m0 0l-4 4m4-4H3'
-                  />
-                </svg>
-              </a>
-            </Link>
-          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

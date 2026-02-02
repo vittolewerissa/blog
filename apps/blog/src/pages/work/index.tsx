@@ -35,11 +35,6 @@ export default function WorkIndex({ companies }: Props) {
         >
           <div className='mx-auto max-w-lg lg:max-w-5xl'>
             <div className='flex flex-col gap-6'>
-              <span className='inline-flex items-center gap-2 px-3 py-1.5 bg-warm-white rounded-full border border-sand text-[11px] font-mono text-walnut/70 tracking-[0.2em] uppercase w-fit'>
-                <span className='h-1.5 w-1.5 rounded-full bg-terracotta' />
-                Case Studies
-              </span>
-
               <div>
                 <h1 className='text-4xl sm:text-5xl lg:text-6xl tracking-tight font-normal font-display text-espresso text-balance'>
                   Work Showcase
