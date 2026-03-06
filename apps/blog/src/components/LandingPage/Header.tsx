@@ -13,11 +13,11 @@ export default function Header() {
         }}
       />
 
-      <div className='relative pb-20 lg:pb-32'>
+      <div className='relative pb-14 sm:pb-20 lg:pb-32'>
         <Navigation />
         <main
           id='main-content'
-          className='mt-12 px-4 sm:px-8 sm:mt-24 lg:mt-32'
+          className='mt-8 px-4 sm:px-8 sm:mt-20 lg:mt-32'
         >
           <div className='mx-auto max-w-lg lg:max-w-5xl flex flex-col lg:flex-row lg:items-center'>
             <div className='max-w-lg'>
@@ -33,7 +33,7 @@ export default function Header() {
                 apps across fintech and construction.
               </p>
 
-              <div className='mt-6 mb-2 ml-1 md:mt-7 md:mb-3 puff-in-center lg:hidden'>
+              <div className='mt-5 mb-1 ml-1 md:mt-7 md:mb-3 puff-in-center lg:hidden'>
                 <div className='w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 relative rounded-2xl overflow-hidden shadow-md shadow-espresso/10'>
                   <Image
                     src='/profile-picture.jpg'
@@ -47,7 +47,7 @@ export default function Header() {
               </div>
 
               {/* Location + socials on one row */}
-              <div className='flex flex-wrap items-center gap-3 mt-8 md:mt-10 slide-in-bottom-2'>
+              <div className='flex flex-wrap items-center gap-3 mt-6 sm:mt-8 md:mt-10 slide-in-bottom-2'>
                 <div className='inline-flex items-center px-3 py-1.5 bg-warm-white rounded-full border border-sand'>
                   <svg
                     className='w-3.5 h-3.5 text-terracotta mr-1.5'

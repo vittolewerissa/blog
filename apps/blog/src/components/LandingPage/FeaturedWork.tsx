@@ -88,16 +88,13 @@ export default function RecentWork() {
         <div className='border-t border-sand' />
       </div>
 
-      <div className='py-20 lg:py-28 px-4 sm:px-8'>
+      <div className='py-14 sm:py-18 lg:py-28 px-4 sm:px-8'>
         <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
           {/* Section header */}
-          <div className='flex items-baseline justify-between mb-14'>
+          <div className='flex items-baseline justify-between mb-9 sm:mb-12 lg:mb-14'>
             <h2 className='text-3xl sm:text-4xl tracking-tight font-normal font-display text-espresso text-balance'>
               Work Experience
             </h2>
-            <span className='hidden sm:block text-[12px] text-walnut/70 font-mono tabular-nums tracking-[0.12em] uppercase'>
-              8+ years
-            </span>
           </div>
 
           {/* Timeline */}
@@ -110,11 +107,7 @@ export default function RecentWork() {
                 <div key={job.company} className='group relative'>
                   {/* Entry row */}
                   <div
-                    className={`relative flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-0 py-7 lg:py-8 rounded-xl transition-colors duration-200 ${
-                      index < workExperience.length - 1
-                        ? 'border-b border-sand/60 lg:border-0'
-                        : ''
-                    } ${
+                    className={`relative flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-0 py-6 sm:py-7 lg:py-8 rounded-xl transition-colors duration-200 ${
                       job.current
                         ? 'lg:-mx-6 lg:px-6 bg-warm-white/60 lg:bg-warm-white/80 rounded-2xl border-0 lg:border-0'
                         : 'lg:-mx-6 lg:px-6 hover:bg-warm-white/50 rounded-2xl'
@@ -161,7 +154,7 @@ export default function RecentWork() {
                     </div>
 
                     {/* Right: Content */}
-                    <div className='flex-1 min-w-0 pl-16 lg:pl-4'>
+                    <div className='flex-1 min-w-0 pl-14 sm:pl-16 lg:pl-4'>
                       {/* Company + Role */}
                       <div className='mb-2'>
                         <div className='flex items-baseline gap-2 flex-wrap'>
@@ -171,7 +164,16 @@ export default function RecentWork() {
                               aria-label={`View ${job.company} case study`}
                             >
                               <h3 className='text-[20px] sm:text-[22px] font-display font-semibold text-espresso leading-tight text-balance group-hover:text-terracotta transition-colors'>
-                                {job.company}
+                                {job.id === 'phantom-network' ? (
+                                  <>
+                                    <span className='sm:hidden'>PXN</span>
+                                    <span className='hidden sm:inline'>
+                                      {job.company}
+                                    </span>
+                                  </>
+                                ) : (
+                                  job.company
+                                )}
                               </h3>
                               <span className='text-sand text-sm select-none'>
                                 /

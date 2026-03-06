@@ -28,18 +28,18 @@ export default function WorkIndex({ companies }: Props) {
         }}
       />
 
-      <div className='relative pb-16 lg:pb-24'>
+      <div className='relative pb-12 sm:pb-16 lg:pb-24'>
         <main
           id='main-content'
-          className='mt-12 px-4 sm:px-8 sm:mt-20 lg:mt-24'
+          className='mt-8 px-4 sm:px-8 sm:mt-16 lg:mt-24'
         >
           <div className='mx-auto max-w-lg lg:max-w-5xl'>
-            <div className='flex flex-col gap-6'>
+            <div className='flex flex-col gap-5 sm:gap-6'>
               <div>
                 <h1 className='text-4xl sm:text-5xl lg:text-6xl tracking-tight font-normal font-display text-espresso text-balance'>
                   Work Showcase
                 </h1>
-                <p className='text-walnut mt-4 text-base sm:text-lg leading-relaxed max-w-2xl'>
+                <p className='text-walnut mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed max-w-2xl'>
                   A collection of articles about the projects and challenges
                   I&apos;ve worked on throughout my career. Each company
                   represents a unique chapter of learning and growth.
@@ -54,16 +54,16 @@ export default function WorkIndex({ companies }: Props) {
         <div className='border-t border-sand' />
       </div>
 
-      <section className='py-16 lg:py-20 px-4 sm:px-8'>
+      <section className='py-12 sm:py-16 lg:py-20 px-4 sm:px-8'>
         <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
-          <div className='space-y-6'>
+          <div className='space-y-4 sm:space-y-6'>
             {companies.map((company) => (
               <Link key={company.id} href={`/work/${company.id}`}>
                 <a className='group block'>
                   <div className='relative rounded-2xl bg-warm-white border border-sand/80 hover:border-terracotta/30 transition-colors duration-200'>
-                    <div className='p-6 sm:p-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8'>
+                    <div className='p-5 sm:p-7 lg:p-8 flex flex-col gap-3 sm:gap-4 sm:flex-row sm:items-start lg:gap-8'>
                       <div className='sm:w-52 lg:w-56 flex-shrink-0'>
-                        <p className='text-[12px] font-mono text-walnut/70 uppercase tracking-[0.16em] mb-3 whitespace-nowrap tabular-nums'>
+                        <p className='text-[12px] font-mono text-walnut/70 uppercase tracking-[0.16em] mb-2.5 sm:mb-3 whitespace-nowrap tabular-nums'>
                           {company.period}
                         </p>
 
@@ -114,7 +114,7 @@ export default function WorkIndex({ companies }: Props) {
                             />
                           </svg>
                         </div>
-                        <p className='text-walnut/90 leading-relaxed mt-2'>
+                        <p className='text-walnut/90 leading-relaxed mt-1.5 sm:mt-2'>
                           {company.description}
                         </p>
                       </div>
@@ -126,7 +126,7 @@ export default function WorkIndex({ companies }: Props) {
           </div>
 
           {companies.length === 0 && (
-            <div className='text-center py-12'>
+            <div className='text-center py-10 sm:py-12'>
               <p className='text-walnut text-lg'>
                 No case studies available yet. Check back soon!
               </p>

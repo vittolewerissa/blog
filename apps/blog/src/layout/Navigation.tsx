@@ -21,7 +21,7 @@ export default function Navigation() {
           >
             Skip to content
           </a>
-          <div className='pt-8 max-w-7xl mx-auto px-4 sm:px-6'>
+          <div className='pt-6 sm:pt-8 max-w-7xl mx-auto px-4 sm:px-6'>
             <nav
               className='flex items-center justify-between sm:h-10 lg:justify-center relative max-w-lg mx-auto lg:max-w-5xl'
               aria-label='Global'
@@ -92,7 +92,7 @@ function MobileNavigation({ close }: { close: () => void }) {
               <XIcon className='h-8 w-8' aria-hidden='true' />
             </Popover.Button>
           </div>
-          <div className='px-2 pt-2 pb-3 pr-14'>
+          <div className='px-2 pt-1 pb-2 pr-14'>
             {navigation.map((item) => (
               <Link key={item.name} href={item.href} passHref>
                 <a

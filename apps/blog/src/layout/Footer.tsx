@@ -52,10 +52,10 @@ export default function Footer() {
       <h2 id='footer-heading' className='sr-only'>
         Footer
       </h2>
-      <div className='mt-8 p-8 border-t border-sand/70'>
+      <div className='mt-6 p-5 sm:p-8 border-t border-sand/70'>
         <div className='max-w-lg mx-auto lg:max-w-5xl'>
-          <div className='flex flex-col lg:flex-row lg:justify-between lg:items-start space-y-3 lg:space-y-0'>
-            <div className='flex flex-col space-y-3'>
+          <div className='flex flex-col lg:flex-row lg:justify-between lg:items-start space-y-4 lg:space-y-0'>
+            <div className='flex flex-col space-y-2 sm:space-y-3'>
               <div className='flex space-x-3'>
                 {socialLinks.map((item) => (
                   item.href.startsWith('mailto:') ? (
@@ -87,7 +87,7 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            <div className='text-[13px] text-walnut/70 flex items-center gap-1'>
+            <div className='pt-1 lg:pt-0 text-[13px] text-walnut/70 flex items-center gap-1'>
               Built with
               <svg
                 className='h-3.5 w-3.5 text-terracotta'
