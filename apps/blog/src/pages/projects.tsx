@@ -13,15 +13,15 @@ export default function ProjectsPage() {
           }}
         />
 
-        <section className='relative pb-12 lg:pb-16'>
-          <div className='mt-12 px-4 sm:px-8 sm:mt-20 lg:mt-24'>
+        <section className='relative pb-10 sm:pb-12 lg:pb-16'>
+          <div className='mt-8 px-4 sm:px-8 sm:mt-16 lg:mt-24'>
             <div className='mx-auto max-w-lg lg:max-w-5xl'>
-              <div className='mt-6'>
+              <div className='mt-4 sm:mt-6'>
                 <div>
                   <h1 className='text-4xl sm:text-5xl lg:text-6xl tracking-tight font-normal font-display text-espresso text-balance'>
                     Projects
                   </h1>
-                  <p className='text-walnut mt-4 text-base sm:text-lg leading-relaxed max-w-2xl'>
+                  <p className='text-walnut mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed max-w-2xl'>
                     Products I&apos;ve built or contributed to, from early
                     stage MVPs to large-scale platforms used in live events and
                     digital commerce.
@@ -35,9 +35,9 @@ export default function ProjectsPage() {
 
       <Projects />
 
-      <section className='pt-8 pb-14 lg:pt-10 lg:pb-16 px-4 sm:px-8'>
+      <section className='pt-6 sm:pt-8 pb-12 sm:pb-14 lg:pt-10 lg:pb-16 px-4 sm:px-8'>
         <div className='max-w-lg mx-auto lg:max-w-5xl'>
-          <div className='border-t border-sand/80 pt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
+          <div className='border-t border-sand/80 pt-5 sm:pt-6 flex flex-col gap-2.5 sm:gap-3 sm:flex-row sm:items-center sm:justify-between'>
             <p className='text-walnut leading-relaxed'>
               Need the complete project history?
             </p>

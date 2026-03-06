@@ -118,10 +118,10 @@ function ProjectCard({
       {/* Project Info */}
       <div
         className={`flex-1 flex flex-col ${
-          large ? 'p-6 lg:p-10' : 'p-5'
+          large ? 'p-5 sm:p-6 lg:p-10' : 'p-4 sm:p-5'
         }`}
       >
-        <div className='flex items-start justify-between mb-2 gap-3'>
+        <div className='flex items-start justify-between mb-1.5 sm:mb-2 gap-3'>
           <h3
             className={`font-bold font-display text-espresso text-balance group-hover:text-terracotta transition-colors ${
               large ? 'text-[26px] lg:text-[32px]' : 'text-[19px]'
@@ -137,8 +137,8 @@ function ProjectCard({
         <p
           className={`leading-relaxed ${
             large
-              ? 'text-walnut text-base leading-[1.7] mb-6'
-              : 'text-walnut/90 text-[15px] line-clamp-3 mb-4'
+              ? 'text-walnut text-base leading-[1.7] mb-5 sm:mb-6'
+              : 'text-walnut/90 text-[15px] line-clamp-3 mb-3 sm:mb-4'
           }`}
         >
           {project.description}
@@ -146,11 +146,11 @@ function ProjectCard({
 
         <div className='mt-auto'>
           {project.technologies.length > 0 && (
-            <div className='flex flex-wrap gap-1.5 mb-3 mt-1'>
+            <div className='flex flex-wrap gap-1.5 mb-2.5 sm:mb-3 mt-1'>
               {project.technologies.slice(0, large ? 5 : 4).map((tech) => (
                 <span
                   key={tech}
-                  className='px-2 py-0.5 text-[12px] font-medium font-mono bg-cream text-stone rounded border border-sand/60'
+                  className='px-2 py-0.5 text-[12px] font-mono font-medium text-walnut bg-warm-white rounded border border-sand/80'
                 >
                   {tech}
                 </span>
@@ -158,7 +158,7 @@ function ProjectCard({
             </div>
           )}
 
-          <div className='pt-3 border-t border-sand/60'>
+          <div className='pt-2.5 sm:pt-3 border-t border-sand/60'>
             <div className='flex items-center justify-between gap-3'>
               <span className='text-[11px] font-mono text-walnut/70 uppercase tracking-[0.12em] shrink-0'>
                 {project.status}
@@ -235,9 +235,9 @@ export default function Projects() {
         <div className='border-t border-sand' />
       </div>
 
-      <div className='py-20 lg:py-28 px-4 sm:px-8'>
+      <div className='py-14 sm:py-20 lg:py-28 px-4 sm:px-8'>
         <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
-          <div className='mb-10 lg:mb-12'>
+          <div className='mb-8 sm:mb-10 lg:mb-12'>
             <h2
               id='featured-projects-title'
               className='text-3xl sm:text-4xl lg:text-5xl tracking-tight font-normal font-display text-espresso text-balance'
@@ -247,19 +247,19 @@ export default function Projects() {
           </div>
 
           {/* Featured projects — larger, side-by-side layout */}
-          <div className='grid gap-8 mb-12'>
+          <div className='grid gap-6 sm:gap-8 mb-10 sm:mb-12'>
             {featured.map((project) => (
               <ProjectCard key={project.name} project={project} large />
             ))}
           </div>
 
           {/* Remaining projects — smaller grid */}
-          <div className='mb-5'>
+          <div className='mb-4 sm:mb-5'>
             <h3 className='text-xl sm:text-2xl font-display text-espresso'>
               More Projects
             </h3>
           </div>
-          <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-2'>
+          <div className='grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-2'>
             {rest.map((project) => (
               <ProjectCard key={project.name} project={project} />
             ))}
