@@ -56,27 +56,29 @@ export default function Footer() {
         <div className='max-w-lg mx-auto lg:max-w-5xl'>
           <div className='flex flex-col lg:flex-row lg:justify-between lg:items-start space-y-3 lg:space-y-0'>
             <div className='flex flex-col space-y-3'>
-              <div>
-                <h3 className='font-logo text-lg lg:text-xl tracking-[0.02em] font-medium text-espresso'>
-                  Vitto Lewerissa
-                </h3>
-              </div>
               <div className='flex space-x-3'>
                 {socialLinks.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target={item.href.startsWith('mailto:') ? undefined : '_blank'}
-                    rel={
-                      item.href.startsWith('mailto:')
-                        ? undefined
-                        : 'noopener noreferrer'
-                    }
-                    className='p-2 text-walnut/80 hover:text-espresso transition-colors duration-200'
-                    aria-label={item.name}
-                  >
-                    <item.icon className='h-6 w-6' />
-                  </a>
+                  item.href.startsWith('mailto:') ? (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className='p-2 text-walnut/80 hover:text-espresso transition-colors duration-200'
+                      aria-label={item.name}
+                    >
+                      <item.icon className='h-6 w-6' />
+                    </a>
+                  ) : (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='p-2 text-walnut/80 hover:text-espresso transition-colors duration-200'
+                      aria-label={item.name}
+                    >
+                      <item.icon className='h-6 w-6' />
+                    </a>
+                  )
                 ))}
               </div>
               <div>
@@ -95,7 +97,7 @@ export default function Footer() {
               >
                 <path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' />
               </svg>
-              in Bali
+              in Jakarta
             </div>
           </div>
         </div>

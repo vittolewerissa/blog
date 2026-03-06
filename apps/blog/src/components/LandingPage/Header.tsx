@@ -20,7 +20,7 @@ export default function Header() {
           className='mt-12 px-4 sm:px-8 sm:mt-24 lg:mt-32'
         >
           <div className='mx-auto max-w-lg lg:max-w-5xl flex flex-col lg:flex-row lg:items-center'>
-            <div className='order-last lg:order-first max-w-lg'>
+            <div className='max-w-lg'>
               <h1 className='text-5xl sm:text-6xl lg:text-8xl tracking-tight font-normal font-display text-espresso text-balance'>
                 <span className='block leading-[1.05] slide-in-bottom'>
                   <span className='wave mr-2 inline-block align-[-6%] text-[0.85em]'>👋🏼</span> Hi, I&apos;m{' '}
@@ -32,6 +32,19 @@ export default function Header() {
                 event platforms serving millions of users to enterprise
                 apps across fintech and construction.
               </p>
+
+              <div className='mt-6 mb-2 ml-1 md:mt-7 md:mb-3 puff-in-center lg:hidden'>
+                <div className='w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 relative rounded-2xl overflow-hidden shadow-md shadow-espresso/10'>
+                  <Image
+                    src='/profile-picture.jpg'
+                    alt='Vitto Lewerissa'
+                    className='object-cover'
+                    width={112}
+                    height={112}
+                    sizes='(min-width: 768px) 160px, (min-width: 640px) 112px, 96px'
+                  />
+                </div>
+              </div>
 
               {/* Location + socials on one row */}
               <div className='flex flex-wrap items-center gap-3 mt-8 md:mt-10 slide-in-bottom-2'>
@@ -57,7 +70,7 @@ export default function Header() {
                     />
                   </svg>
                   <span className='text-walnut text-[15px] font-medium'>
-                    Bali, Indonesia
+                    Jakarta, Indonesia
                   </span>
                 </div>
 
@@ -143,7 +156,7 @@ export default function Header() {
               </div>
             </div>
 
-            <div className='relative mt-6 mb-8 ml-4 sm:mr-8 self-start lg:mt-0 md:ml-12 md:mt-0 shrink-0 puff-in-center lg:-mr-8'>
+            <div className='hidden lg:block relative mt-6 mb-8 ml-4 sm:mr-8 self-start lg:mt-0 md:ml-12 md:mt-0 shrink-0 puff-in-center lg:-mr-8'>
               <div className='w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-[22rem] lg:h-[22rem] relative rounded-2xl overflow-hidden shadow-lg shadow-espresso/10'>
                 <Image
                   src='/profile-picture.jpg'
