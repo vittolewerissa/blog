@@ -71,11 +71,11 @@ export default function ProjectsArchivePage() {
           }}
         />
 
-        <section className='relative pb-10 lg:pb-14'>
-          <div className='mt-12 px-4 sm:px-8 sm:mt-20 lg:mt-24'>
+        <section className='relative pb-8 sm:pb-10 lg:pb-14'>
+          <div className='mt-8 px-4 sm:px-8 sm:mt-16 lg:mt-24'>
             <div className='mx-auto max-w-lg lg:max-w-5xl'>
               <Link href='/projects' passHref>
-                <a className='mb-8 inline-flex items-center px-3 py-1.5 text-sm bg-warm-white text-walnut hover:text-espresso hover:bg-cream rounded-full transition-colors border border-sand group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-cream'>
+                <a className='mb-6 sm:mb-8 inline-flex items-center px-3 py-1.5 text-sm bg-warm-white text-walnut hover:text-espresso hover:bg-cream rounded-full transition-colors border border-sand group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-cream'>
                   <svg
                     className='w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform'
                     fill='none'
@@ -97,7 +97,7 @@ export default function ProjectsArchivePage() {
               <h1 className='text-4xl sm:text-5xl lg:text-6xl tracking-tight font-normal font-display text-espresso text-balance'>
                 Projects Archive
               </h1>
-              <p className='text-walnut mt-4 text-base sm:text-lg leading-relaxed max-w-2xl'>
+              <p className='text-walnut mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed max-w-2xl'>
                 Chronological list of all projects, collaborations, and shipped
                 work.
               </p>
@@ -110,7 +110,7 @@ export default function ProjectsArchivePage() {
         <div className='border-t border-sand' />
       </div>
 
-      <section className='py-14 lg:py-20 px-4 sm:px-8'>
+      <section className='py-12 sm:py-14 lg:py-20 px-4 sm:px-8'>
         <div className='max-w-lg mx-auto lg:max-w-5xl'>
           <div className='overflow-x-auto rounded-2xl border border-sand/80 bg-cream'>
             <table className='w-full text-left border-collapse'>
@@ -122,31 +122,31 @@ export default function ProjectsArchivePage() {
                 <tr className='border-b border-sand/70 bg-warm-white/80'>
                   <th
                     scope='col'
-                    className='py-4 pr-6 pl-6 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em]'
+                    className='py-3 sm:py-4 pr-4 sm:pr-6 pl-4 sm:pl-6 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em]'
                   >
                     Year
                   </th>
                   <th
                     scope='col'
-                    className='py-4 px-4 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em]'
+                    className='py-3 sm:py-4 px-3 sm:px-4 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em]'
                   >
                     Project
                   </th>
                   <th
                     scope='col'
-                    className='py-4 px-4 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em] hidden md:table-cell'
+                    className='py-3 sm:py-4 px-3 sm:px-4 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em] hidden md:table-cell'
                   >
                     Made at
                   </th>
                   <th
                     scope='col'
-                    className='py-4 px-4 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em] hidden lg:table-cell'
+                    className='py-3 sm:py-4 px-3 sm:px-4 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em] hidden lg:table-cell'
                   >
                     Built with
                   </th>
                   <th
                     scope='col'
-                    className='py-4 pl-4 pr-6 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em]'
+                    className='py-3 sm:py-4 pl-3 sm:pl-4 pr-4 sm:pr-6 text-espresso/90 font-medium text-[11px] font-mono uppercase tracking-[0.16em]'
                   >
                     Link
                   </th>
@@ -158,20 +158,20 @@ export default function ProjectsArchivePage() {
                     key={`${project.name}-${project.madeAt}-${project.year}`}
                     className='border-b border-sand/60 hover:bg-warm-white/70 focus-within:bg-warm-white/70 transition-colors group'
                   >
-                    <td className='py-5 pr-6 pl-6 text-walnut text-sm font-mono tabular-nums'>
+                    <td className='py-4 sm:py-5 pr-4 sm:pr-6 pl-4 sm:pl-6 text-walnut text-sm font-mono tabular-nums'>
                       {project.year}
                     </td>
-                    <td className='py-5 px-4 text-espresso font-semibold font-display text-lg group-hover:text-terracotta transition-colors'>
+                    <td className='py-4 sm:py-5 px-3 sm:px-4 text-espresso font-semibold font-display text-lg group-hover:text-terracotta transition-colors'>
                       {project.name}
                       <span className='md:hidden block mt-1 text-[11px] font-mono uppercase tracking-[0.12em] text-walnut/80'>
                         {project.madeAt}
                       </span>
                     </td>
-                    <td className='py-5 px-4 text-walnut text-sm hidden md:table-cell'>
+                    <td className='py-4 sm:py-5 px-3 sm:px-4 text-walnut text-sm hidden md:table-cell'>
                       {project.madeAt}
                     </td>
-                    <td className='py-5 px-4 hidden lg:table-cell'>
-                      <div className='flex flex-wrap gap-2'>
+                    <td className='py-4 sm:py-5 px-3 sm:px-4 hidden lg:table-cell'>
+                      <div className='flex flex-wrap gap-1.5 sm:gap-2'>
                         {project.builtWith.map((tech, techIndex) => (
                           <span
                             key={`${project.name}-${tech}-${techIndex}`}
@@ -182,7 +182,7 @@ export default function ProjectsArchivePage() {
                         ))}
                       </div>
                     </td>
-                    <td className='py-5 pl-4 pr-6'>
+                    <td className='py-4 sm:py-5 pl-3 sm:pl-4 pr-4 sm:pr-6'>
                       {project.href && project.link ? (
                         <a
                           href={project.href}
